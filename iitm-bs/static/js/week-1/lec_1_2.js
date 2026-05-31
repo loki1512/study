@@ -1,1159 +1,187 @@
-// The complete quiz payload
 const quizData = [
-    {
-    "id": 1,
-    "context": "The NLP course spans 12 weeks, covering fundamental concepts to advanced techniques, divided into two distinct halves handled by different professors.",
-    "question": "What is the primary focus of the first six weeks of the NLP course?",
-    "options": [
-    "A) Advanced neural networks and Transformers",
-    "B) Real-world applications like question answering",
-    "C) Linguistic basics, essential text processing, and classical sequence models",
-    "D) Large language models and efficient fine-tuning"
-    ],
-    "answer": "C) Linguistic basics, essential text processing, and classical sequence models",
-    "explanation": "The first six weeks focus on foundational linguistic basics and text processing before moving to advanced topics. Before understanding how to process language computationally, we must first define what a natural language actually is in the next question."
-    },
-    {
-    "id": 2,
-    "context": "Natural language is central to human society, evolved through daily interaction to express complex ideas and emotions.",
-    "question": "Which of the following best defines a 'natural language'?",
-    "options": [
-    "A) A programming language created for computer execution",
-    "B) A language artificially constructed for business purposes",
-    "C) A communication system primarily used by animals like bees and cats",
-    "D) A language naturally evolved and spoken by humans for everyday communication"
-    ],
-    "answer": "D) A language naturally evolved and spoken by humans for everyday communication",
-    "explanation": "Natural language is constructed by human beings through social interaction and evolved naturally along with humans. Now that we know what natural language is, we will compare it to languages that are intentionally designed by humans."
-    },
-    {
-    "id": 3,
-    "context": "While humans speak natural languages, they have also created other types of languages, such as Python or Java, for specific non-communication tasks.",
-    "question": "How do artificial languages like Python differ from natural languages?",
-    "options": [
-    "A) Artificial languages are used for everyday human communication.",
-    "B) Artificial languages are designed for computer instructions, not natural human evolution.",
-    "C) Artificial languages evolved naturally along with human beings.",
-    "D) Artificial languages have more phonetic sounds than natural languages."
-    ],
-    "answer": "B) Artificial languages are designed for computer instructions, not natural human evolution.",
-    "explanation": "Artificial languages are specifically created for programming computers to do activities, lacking the natural evolution and nuances of human spoken language. Even when humans try to construct languages for human communication, they differ from natural languages in their rules, which we explore next."
-    },
-    {
-    "id": 4,
-    "context": "Constructed auxiliary languages (like Esperanto) are created by humans for easier communication, often for business, but they lack certain organic traits.",
-    "question": "What is a key difference in grammar between natural languages and constructed auxiliary languages?",
-    "options": [
-    "A) Constructed languages have irregularities, while natural languages are perfectly regular.",
-    "B) Natural languages have irregular patterns (e.g., child to children), while constructed languages follow strict regular patterns.",
-    "C) Natural languages cannot be pluralized.",
-    "D) Constructed languages do not use pluralization at all."
-    ],
-    "answer": "B) Natural languages have irregular patterns (e.g., child to children), while constructed languages follow strict regular patterns.",
-    "explanation": "Natural languages have irregular patterns (like pluralizing 'child' to 'children' instead of 'childs'), whereas constructed languages rely on regular, predictable patterns without such irregularities. Having distinguished human languages from constructed ones, we must also contrast them with animal communication."
-    },
-    {
-    "id": 5,
-    "context": "Animals like honeybees and cats communicate with each other using dances, meows, or gestures to indicate food or play.",
-    "question": "Why is non-human communication not considered equivalent to human natural language?",
-    "options": [
-    "A) Animal communication has an infinite number of words.",
-    "B) Animal communication is limited to a small number of sounds and gestures.",
-    "C) Animals use syntax and semantics just like humans.",
-    "D) Animal communication is artificially constructed."
-    ],
-    "answer": "B) Animal communication is limited to a small number of sounds and gestures.",
-    "explanation": "Non-human communication is highly limited in the number of sounds and gestures, unlike the vast and complex system of human language. This vastness of human language allows for infinite expansion, a concept discussed in the following question."
-    },
-    {
-    "id": 6,
-    "context": "Human language has a massive vocabulary that is never entirely fixed, allowing us to name new discoveries.",
-    "question": "What demonstrates the limitless vocabulary capacity of human natural language?",
-    "options": [
-    "A) We can easily count the exact number of words in any language.",
-    "B) Vocabulary sizes decrease as society advances.",
-    "C) We can continually invent new words, such as naming a new star in the sky.",
-    "D) Humans are limited to a strict 100,000 words."
-    ],
-    "answer": "C) We can continually invent new words, such as naming a new star in the sky.",
-    "explanation": "Human languages are predominantly increasing; we can continuously add new words (like naming new stars), making it impossible to count a definitive total. With this vast vocabulary, humans use language for highly complex purposes, which we analyze next."
-    },
-    {
-    "id": 7,
-    "context": "Humans utilize their vast vocabularies not just for basic survival, but for a wide array of complex cognitive expressions.",
-    "question": "According to the lecture, which of the following is a key capability of human natural language?",
-    "options": [
-    "A) Restricting communication only to factual statements.",
-    "B) Expressing complex information, sharing knowledge, and conveying feelings.",
-    "C) Ensuring every human speaks identical sentences.",
-    "D) Preventing the expression of abstract ideas."
-    ],
-    "answer": "B) Expressing complex information, sharing knowledge, and conveying feelings.",
-    "explanation": "Humans use language to express complex information, feelings, exchange knowledge, and interact socially, such as joking or arguing. However, this expression is not uniform worldwide; it is heavily influenced by diversity, our next topic."
-    },
-    {
-    "id": 8,
-    "context": "When a person speaks Hindi and another speaks Telugu, they are using systems with vastly different lexical choices and structures.",
-    "question": "What does the diversity among different natural languages primarily reflect?",
-    "options": [
-    "A) The universal grammar shared by all animals.",
-    "B) A gateway to human culture and society.",
-    "C) The artificial rules set by early computer programmers.",
-    "D) The lack of structure in human communication."
-    ],
-    "answer": "B) A gateway to human culture and society.",
-    "explanation": "Language diversity carries heavy cultural loads, making language a gateway to expressing specific human cultures and societies. Because of this diversity, people with different native tongues often need a shared medium to communicate, leading to the next concept."
-    },
-    {
-    "id": 9,
-    "context": "In regions with high linguistic diversity, a common shared language is often adopted so people from different backgrounds can communicate confidently.",
-    "question": "What is the technical term used to describe a common bridging language, such as English among literate persons or Hindi in specific regions?",
-    "options": [
-    "A) Lingua Franca",
-    "B) Esperanto",
-    "C) Artificial Language",
-    "D) Mental Lexicon"
-    ],
-    "answer": "A) Lingua Franca",
-    "explanation": "A lingua franca is a common language that bridges two different language speakers, allowing them to communicate confidently. Understanding this need for a lingua franca brings us to the sheer scale of global linguistic diversity."
-    },
-    {
-    "id": 10,
-    "context": "Linguistic diversity is vast globally, though many languages are currently facing endangerment.",
-    "question": "Approximately how many spoken languages exist in the world today?",
-    "options": [
-    "A) 1,000",
-    "B) 3,500",
-    "C) 7,000",
-    "D) 10,000"
-    ],
-    "answer": "C) 7,000",
-    "explanation": "There are almost around 7,000 spoken languages in the world today, though some are endangered. Next, we will look at how these languages are geographically distributed, particularly in Asia."
-    },
-    {
-    "id": 11,
-    "context": "Global languages are not distributed evenly across continents; certain regions house massive clusters of linguistic diversity.",
-    "question": "What proportion of the world's spoken languages are found in Asia?",
-    "options": [
-    "A) One-tenth",
-    "B) One-quarter",
-    "C) One-third",
-    "D) One-half"
-    ],
-    "answer": "C) One-third",
-    "explanation": "One-third of the world's 7,000 languages are spoken in Asia, with South Asia playing a very important role. Zooming in on South Asia, India specifically presents a highly diverse linguistic landscape with multiple language families."
-    },
-    {
-    "id": 12,
-    "context": "India is a multilingual country known for housing major distinct language families across its diverse regions.",
-    "question": "Which of the following is NOT listed as one of the four major language families in India?",
-    "options": [
-    "A) Dravidian",
-    "B) Indo-Aryan",
-    "C) Tibeto-Burman",
-    "D) Uralic"
-    ],
-    "answer": "D) Uralic",
-    "explanation": "The four major language families in India mentioned are Dravidian, Indo-Aryan, Tibeto-Burman, and Austroasiatic. Uralic is not one of them. Despite belonging to different families, these Indian languages exhibit a fascinating shared phenomenon over time."
-    },
-    {
-    "id": 13,
-    "context": "When languages from different families are spoken in a shared geographic area for a long time, they begin to influence each other.",
-    "question": "What happens across Indian languages due to their coexistence in the same region over a long period?",
-    "options": [
-    "A) They completely merge into a single artificial language.",
-    "B) They show commonalities and converged features.",
-    "C) They lose their original grammatical rules entirely.",
-    "D) They become impossible for machines to translate."
-    ],
-    "answer": "B) They show commonalities and converged features.",
-    "explanation": "Due to coexistence over a long period, Indian languages across different families show commonalities and converged features. Given this immense complexity and diversity, how can computers handle language? This introduces the field of NLP."
-    },
-    {
-    "id": 14,
-    "context": "Human languages possess immense diversity and complexity, making them challenging for machines to interpret.",
-    "question": "What is the primary goal of Natural Language Processing (NLP)?",
-    "options": [
-    "A) To create new artificial programming languages.",
-    "B) To force humans to communicate in binary code.",
-    "C) To enable computer systems to understand, interpret, and generate human language.",
-    "D) To limit the vocabulary humans are allowed to use."
-    ],
-    "answer": "C) To enable computer systems to understand, interpret, and generate human language.",
-    "explanation": "NLP aims to make computer systems capable of understanding, interpreting, and generating human language just as humans do. Achieving this goal requires building systems that mimic human cognitive language storage, which we explore next."
-    },
-    {
-    "id": 15,
-    "context": "To process language, humans rely on a cognitive storage of words and information. NLP attempts to replicate this structure in machines.",
-    "question": "What is the outcome of NLP fields that act as models of human language?",
-    "options": [
-    "A) Compilers",
-    "B) Language Models",
-    "C) Operating Systems",
-    "D) Syntax Checkers"
-    ],
-    "answer": "B) Language Models",
-    "explanation": "The outcome of NLP is the creation of multiple language models that act as computational equivalents of human language. To understand these models, we must look at the human mental equivalent they attempt to mimic."
-    },
-    {
-    "id": 16,
-    "context": "Humans store a massive number of words and syntactical rules in their minds, retrieving them seamlessly during communication.",
-    "question": "What is the term used for the storage of words and language information in the human mind?",
-    "options": [
-    "A) Mental Lexicon",
-    "B) Digital Dictionary",
-    "C) Knowledge Graph",
-    "D) Phonotactic Core"
-    ],
-    "answer": "A) Mental Lexicon",
-    "explanation": "The storage of words and structural knowledge in our minds is referred to as the mental lexicon, enabling storage and retrieval of language. However, retrieving from this lexicon is highly subjective, presenting a unique challenge to mimicking humans."
-    },
-    {
-    "id": 17,
-    "context": "Even when explaining the exact same concept, two humans will rarely use the exact same sentence structure or vocabulary.",
-    "question": "What is a major challenge for machines attempting to mimic human language generation?",
-    "options": [
-    "A) Humans only use 100 words in daily life.",
-    "B) No two humans speak in the exact same fashion when explaining the same concept.",
-    "C) Machines generate language too emotionally.",
-    "D) Humans rely purely on mathematical logic to speak."
-    ],
-    "answer": "B) No two humans speak in the exact same fashion when explaining the same concept.",
-    "explanation": "A significant complexity is that human generation is highly diverse; no two humans explain a concept in the exactly identical way. To solve such diverse challenges, NLP relies on multiple fields of study."
-    },
-    {
-    "id": 18,
-    "context": "Mimicking the human mind computationally requires deep knowledge of both language structure and algorithms.",
-    "question": "NLP is described as a highly interdisciplinary field combining which two primary areas?",
-    "options": [
-    "A) Hardware engineering and quantum physics",
-    "B) Computational linguistics and machine learning",
-    "C) Psychology and biological anatomy",
-    "D) Sociology and historical literature"
-    ],
-    "answer": "B) Computational linguistics and machine learning",
-    "explanation": "NLP combines the scientific study of language (Linguistics) with computational techniques like Machine Learning and Deep Learning. To feed these machine learning models, a specific type of resource is heavily required."
-    },
-    {
-    "id": 19,
-    "context": "Modern computational models cannot learn human language through instinct; they require a tangible input to study.",
-    "question": "What is the core element or input required to build NLP models that represent human language?",
-    "options": [
-    "A) Hardcoded grammatical rules",
-    "B) Structured, massive amounts of Data",
-    "C) Human brainwaves",
-    "D) Audio recordings of animal sounds"
-    ],
-    "answer": "B) Structured, massive amounts of Data",
-    "explanation": "Huge amounts of structured data serve as the core representation of human language, acting as the primary input from which machines learn. Once a machine learns from this data, it can power various helpful real-world tools."
-    },
-    {
-    "id": 20,
-    "context": "The ultimate aim of NLP is to instill human-like language capabilities into AI, allowing machines to perform tasks usually reserved for humans.",
-    "question": "Which of the following is a direct application of giving artificial intelligence the capability of human language generation?",
-    "options": [
-    "A) Designing stronger computer hardware.",
-    "B) Building chatbots that answer domain-specific questions.",
-    "C) Curing biological viruses.",
-    "D) Improving the battery life of mobile phones."
-    ],
-    "answer": "B) Building chatbots that answer domain-specific questions.",
-    "explanation": "Instilling human-like language into machines enables applications like chatbots, which can answer questions intelligently in a specific domain. Another critical application focuses on breaking language barriers, especially in multilingual countries."
-    },
-    {
-    "id": 21,
-    "context": "In places like India, language barriers are significant. NLP aims to solve this by translating text seamlessly from a source language to a target language.",
-    "question": "What is a strict requirement for a high-quality machine translation system?",
-    "options": [
-    "A) It should summarize the text to be as short as possible.",
-    "B) It should generate exactly the same information in the target language without over- or under-representing it.",
-    "C) It should always translate everything into English first.",
-    "D) It should intentionally change the meaning to fit the target culture."
-    ],
-    "answer": "B) It should generate exactly the same information in the target language without over- or under-representing it.",
-    "explanation": "A machine translation system must generate the exact same information without under-representing or over-representing the original meaning. To achieve this, the system's architecture conceptually mimics the human mind."
-    },
-    {
-    "id": 22,
-    "context": "Diagrammatically, researchers view the task of NLP as taking the immense, complex capabilities of human cognition and mapping them to a machine.",
-    "question": "What is the high-level diagrammatic goal of NLP mentioned in the lecture?",
-    "options": [
-    "A) To make humans think more like computers.",
-    "B) To make the machine function like a human mind with loads of information in language production.",
-    "C) To restrict machine output to simple binary codes.",
-    "D) To separate linguistics entirely from computer science."
-    ],
-    "answer": "B) To make the machine function like a human mind with loads of information in language production.",
-    "explanation": "The diagrammatic goal of NLP is to take the complex processing of the human mind and replicate it in machines so they function like humans in language production. This NLP pipeline is split into two major sub-fields representing input and output."
-    },
-    {
-    "id": 23,
-    "context": "Language processing in machines is not a monolithic task; it is divided into interpreting incoming text and producing outgoing text.",
-    "question": "What are the two major aspects of Natural Language Processing?",
-    "options": [
-    "A) Syntax Parsing and Dictionary Lookup",
-    "B) Speech Recognition and Image Processing",
-    "C) Natural Language Understanding (NLU) and Natural Language Generation (NLG)",
-    "D) Data Mining and Web Scraping"
-    ],
-    "answer": "C) Natural Language Understanding (NLU) and Natural Language Generation (NLG)",
-    "explanation": "NLP requires both Natural Language Understanding (NLU) for interpretation and Natural Language Generation (NLG) for production. Let us look closer at NLU and its specific role for the machine."
-    },
-    {
-    "id": 24,
-    "context": "Before a machine can converse, it needs humans to structure and provide knowledge so it can interpret language correctly.",
-    "question": "How does the lecture characterize Natural Language Understanding (NLU)?",
-    "options": [
-    "A) It is work done automatically by the machine to speak.",
-    "B) It is work done 'for the machine' by providing it with structuralized data to represent human language.",
-    "C) It is entirely focused on sound articulation.",
-    "D) It generates text independently of human input."
-    ],
-    "answer": "B) It is work done 'for the machine' by providing it with structuralized data to represent human language.",
-    "explanation": "NLU is described as work done 'for the machine'—researchers structure and provide the necessary data so the algorithm can interpret human language. Once the machine understands, it must take the next step: generating a response."
-    },
-    {
-    "id": 25,
-    "context": "Once interpretation is complete, the system transitions from passively receiving data to actively creating it.",
-    "question": "How is Natural Language Generation (NLG) characterized compared to NLU?",
-    "options": [
-    "A) It is done by humans to teach the machine.",
-    "B) It is done automatically 'by the machine' to produce language on its own.",
-    "C) It strictly focuses on reading text.",
-    "D) It requires no prior understanding of the language."
-    ],
-    "answer": "B) It is done automatically 'by the machine' to produce language on its own.",
-    "explanation": "While NLU is for the machine, NLG is done 'by the machine'. Once it understands the input, it generates language automatically. To understand how machines do this, we compare it to how a human processes visual information into speech."
-    },
-    {
-    "id": 26,
-    "context": "When a human looks at an image of a cat sitting on a mat, they instantly use their world knowledge and visual context to comprehend the scene.",
-    "question": "In the human language production process, what is the 'Conceptualization' stage?",
-    "options": [
-    "A) Pronouncing the letters out loud.",
-    "B) Formulating the exact English words in mind.",
-    "C) Understanding the situation internally, such as recognizing an animal (cat) sitting on a mat.",
-    "D) Checking the grammatical syntax of a sentence."
-    ],
-    "answer": "C) Understanding the situation internally, such as recognizing an animal (cat) sitting on a mat.",
-    "explanation": "Conceptualization is the internal mental understanding of a scene (e.g., recognizing the entities and action: a cat, a mat, and sitting) using world knowledge. After conceptualizing the scene, the human brain must map these concepts to specific words."
-    },
-    {
-    "id": 27,
-    "context": "After conceptualizing a scene, a human must decide which specific language to use (like English) and select the corresponding vocabulary.",
-    "question": "What happens during the 'Formulation' stage of human language production?",
-    "options": [
-    "A) The physical vocal cords vibrate to create sound.",
-    "B) The conceptualization is converted into words and sentences applicable to the chosen language (e.g., matching the concept of a feline to 'C-A-T').",
-    "C) The brain visually registers the image.",
-    "D) The context of the discourse is analyzed."
-    ],
-    "answer": "B) The conceptualization is converted into words and sentences applicable to the chosen language (e.g., matching the concept of a feline to 'C-A-T').",
-    "explanation": "Formulation involves taking the internal concept and constructing it into specific words and grammatically correct sentences (like mapping concepts to 'cat', 'sit', 'mat'). The final step is projecting these formulated words into the real world."
-    },
-    {
-    "id": 28,
-    "context": "With the sentence mentally formulated, the human must now use their physical biology to communicate the sentence to others.",
-    "question": "What is the 'Articulation' phase in human language production?",
-    "options": [
-    "A) Reading a text silently.",
-    "B) Memorizing a dictionary definition.",
-    "C) Using phonetic knowledge and articulatory organs (like the tongue and palate) to produce physical sound systems.",
-    "D) Extracting meaning from a complex sentence."
-    ],
-    "answer": "C) Using phonetic knowledge and articulatory organs (like the tongue and palate) to produce physical sound systems.",
-    "explanation": "Articulation is the final generation part where humans use their phonetic knowledge and physical vocal organs (tongue, teeth, palate) to produce the sounds of the words. Understanding this complex human process requires analyzing language through distinct linguistic components."
-    },
-    {
-    "id": 29,
-    "context": "Linguistics breaks language down into several modular components, starting with the most basic building blocks: physical sounds.",
-    "question": "Which linguistic component deals specifically with the sound systems of a language?",
-    "options": [
-    "A) Syntax",
-    "B) Pragmatics",
-    "C) Phonology",
-    "D) Semantics"
-    ],
-    "answer": "C) Phonology",
-    "explanation": "Phonology is the study of the sound systems of a language. Within phonology, there are strict rules about how these sounds can be combined together."
-    },
-    {
-    "id": 30,
-    "context": "Not every combination of sounds is permissible in every language. English allows 'C' and a vowel, but forbids starting a word with 'C' immediately followed by 'T'.",
-    "question": "What term describes the specific rules that dictate how sounds can be combined in a given language?",
-    "options": [
-    "A) Morphology",
-    "B) Phonotactics",
-    "C) Pragmatics",
-    "D) Generative Grammar"
-    ],
-    "answer": "B) Phonotactics",
-    "explanation": "Phonotactics refers to the language-specific rules that dictate what combinations of sounds are allowed or disallowed. These unique rules often cause interference when a speaker learns a second language."
-    },
-    {
-    "id": 31,
-    "context": "Indian speakers often pronounce the English word 'school' as 'ischool' because their native language rules influence their English pronunciation.",
-    "question": "Why do some native Indian language speakers pronounce 'school' as 'ischool'?",
-    "options": [
-    "A) Because 'ischool' is the correct Old English pronunciation.",
-    "B) Because their native language's phonotactics do not allow the combination of 'S' and 'K' sounds at the start of a word.",
-    "C) Because the morphological root of school demands an 'i' prefix.",
-    "D) Because machine translation systems trained them to do so."
-    ],
-    "answer": "B) Because their native language's phonotactics do not allow the combination of 'S' and 'K' sounds at the start of a word.",
-    "explanation": "The native speakers' phonotactics restrict certain consonant clusters like 'sk' at the beginning of words, prompting them to add an 'i' sound to make it pronounceable. Moving from sounds to words, we look at the next linguistic component."
-    },
-    {
-    "id": 32,
-    "context": "Sounds combine to form words, and words can be modified to change their grammatical function (like adding 's' for plural).",
-    "question": "Which linguistic component studies word formation and word structure?",
-    "options": [
-    "A) Phonology",
-    "B) Morphology",
-    "C) Syntax",
-    "D) Pragmatics"
-    ],
-    "answer": "B) Morphology",
-    "explanation": "Morphology is the study of word formation and how words are structured. Once words are formed, they must be arranged correctly to form sentences."
-    },
-    {
-    "id": 33,
-    "context": "A collection of words does not make sense unless ordered properly. 'The red house' is correct in English, but 'House the red' is not.",
-    "question": "What does the linguistic component 'Syntax' govern?",
-    "options": [
-    "A) How words are structurally and grammatically combined to form acceptable sentences.",
-    "B) The physical vibration of vocal cords.",
-    "C) The historical origin of a word.",
-    "D) The contextual social meaning of a joke."
-    ],
-    "answer": "A) How words are structurally and grammatically combined to form acceptable sentences.",
-    "explanation": "Syntax is the study of how words are combined together to create well-formed, grammatically acceptable sentence structures. However, a grammatically correct sentence must also mean something logically."
-    },
-    {
-    "id": 34,
-    "context": "A sentence can be perfectly grammatical but completely meaningless (e.g., 'Colorless green ideas sleep furiously').",
-    "question": "Which linguistic component focuses purely on the meaning of words and sentences?",
-    "options": [
-    "A) Morphology",
-    "B) Phonology",
-    "C) Semantics",
-    "D) Phonotactics"
-    ],
-    "answer": "C) Semantics",
-    "explanation": "Semantics is the study of meaning derived from words and sentence structures. But meaning can change based on the environment or situation in which it is spoken."
-    },
-    {
-    "id": 35,
-    "context": "Saying 'It is cold in here' might mean a statement of temperature, or it might be a request to close the window, depending on the situation.",
-    "question": "What does the study of 'Pragmatics' involve?",
-    "options": [
-    "A) Word pluralization rules.",
-    "B) Meaning derived from discourse or a specific real-world context.",
-    "C) Identifying the root origin of verbs.",
-    "D) Translating text to binary code."
-    ],
-    "answer": "B) Meaning derived from discourse or a specific real-world context.",
-    "explanation": "Pragmatics deals with context, analyzing whether a sentence makes sense or implies a specific action within a given discourse or situational context. Replicating all these human linguistic traits in machines leads to severe developmental challenges."
-    },
-    {
-    "id": 36,
-    "context": "Machines lack human life experience, making context and reasoning difficult to program.",
-    "question": "What is mentioned as a major challenge when machines process natural language?",
-    "options": [
-    "A) Machines read text too quickly.",
-    "B) Machines have infinite reasoning capabilities.",
-    "C) Understanding context is difficult due to machines' limited reasoning and lack of background knowledge.",
-    "D) Machines refuse to learn from data."
-    ],
-    "answer": "C) Understanding context is difficult due to machines' limited reasoning and lack of background knowledge.",
-    "explanation": "Machines struggle with context because they often possess limited reasoning and lack the ambient background knowledge naturally held by humans. Another major challenge stems directly from the input provided to the machine."
-    },
-    {
-    "id": 37,
-    "context": "Since models learn entirely from human-provided data, any imperfections in that data are absorbed by the machine.",
-    "question": "Why is 'bias' a significant challenge in NLP models?",
-    "options": [
-    "A) Bias causes the computer hardware to overheat.",
-    "B) Bias in training data reflects societal flaws, which the model then mimics and distributes to millions of users.",
-    "C) Bias prevents the machine from understanding English syntax.",
-    "D) Bias makes the translation system delete all vowels."
-    ],
-    "answer": "B) Bias in training data reflects societal flaws, which the model then mimics and distributes to millions of users.",
-    "explanation": "Bias in the training data directly reflects in the model's output, which is problematic since these models are deployed safely to millions of people. This contrast between human flaws and machine operations highlights key differences between the two."
-    },
-    {
-    "id": 38,
-    "context": "Humans interact using innate abilities that go far beyond statistical likelihoods, utilizing empathy and imagination.",
-    "question": "Which of the following traits is inherently present in human language processing but generally absent in machines?",
-    "options": [
-    "A) Rapid processing of petabytes of data.",
-    "B) Emotional intelligence, common sense reasoning, and creativity.",
-    "C) Perfect translation of 7,000 languages simultaneously.",
-    "D) Continuous operation without sleep."
-    ],
-    "answer": "B) Emotional intelligence, common sense reasoning, and creativity.",
-    "explanation": "Humans naturally possess emotional intelligence, common sense reasoning, creativity, and context adaptation, allowing them to learn from minimal data unlike machines. Instead of common sense, machines rely on a different mechanism to learn."
-    },
-    {
-    "id": 39,
-    "context": "Without common sense or emotional intelligence, machines must rely heavily on mathematics to understand language.",
-    "question": "How do machines derive understanding from their knowledge source (data)?",
-    "options": [
-    "A) Through innate biological intuition.",
-    "B) By utilizing complex statistical patterns derived from massive amounts of data.",
-    "C) By asking humans to explain every word manually.",
-    "D) By feeling the emotional weight of a sentence."
-    ],
-    "answer": "B) By utilizing complex statistical patterns derived from massive amounts of data.",
-    "explanation": "Machines rely purely on data, using complex statistical patterns to derive understanding and perform language tasks efficiently. While humans are emotional, machines excel in a different area: consistency."
-    },
-    {
-    "id": 40,
-    "context": "A human might describe the same event cheerfully or angrily depending on their mood or hunger level, whereas a machine does not experience these biological states.",
-    "question": "What advantage does a machine have over a human regarding language generation consistency?",
-    "options": [
-    "A) Machines change their answers based on if they are 'hungry' for data.",
-    "B) Machines are consistent in how they answer, whereas humans vary based on emotional or physical states.",
-    "C) Machines always generate poetry when asked factual questions.",
-    "D) Humans are perfectly consistent while machines hallucinate constantly."
-    ],
-    "answer": "B) Machines are consistent in how they answer, whereas humans vary based on emotional or physical states.",
-    "explanation": "Machines are highly consistent because they are unaffected by emotions like happiness, sadness, or hunger, which naturally cause humans to express the same information differently. Machines also vastly outperform individual humans in another specific linguistic metric."
-    },
-    {
-    "id": 41,
-    "context": "An average human is bilingual or perhaps knows three languages. Processing global communication requires far broader capabilities.",
-    "question": "In what specific scale do machines drastically outperform a single human being?",
-    "options": [
-    "A) Emotional empathy generation.",
-    "B) Multilingual capabilities, potentially interacting with all 7,000 global languages.",
-    "C) Understanding complex sarcastic jokes.",
-    "D) Creating entirely new artificial languages."
-    ],
-    "answer": "B) Multilingual capabilities, potentially interacting with all 7,000 global languages.",
-    "explanation": "While humans usually only know a few languages, machines have the scalable potential to interact with all 7,000 languages in the world. This scalability powers a wide array of NLP applications we use daily."
-    },
-    {
-    "id": 42,
-    "context": "NLP technology is embedded in various modern tools to make human life easier, from predictive texting to smart home devices.",
-    "question": "Which of the following is an expected practical application of NLP mentioned in the lecture?",
-    "options": [
-    "A) Controlling the weather.",
-    "B) Smart home assistants (like switching on a TV), document summarization, and predictive text.",
-    "C) Physical robot manufacturing.",
-    "D) Generating limitless electrical power."
-    ],
-    "answer": "B) Smart home assistants (like switching on a TV), document summarization, and predictive text.",
-    "explanation": "NLP enables applications like smart assistants for the elderly, document summarization, machine translation, and predictive text. Understanding what NLP does today naturally leads to questioning how this field actually started historically."
-    },
-    {
-    "id": 43,
-    "context": "Before exploring the intricate history of NLP, we must review the core objectives that have driven this research for decades.",
-    "question": "What are the three core goals of NLP that have driven its historical development?",
-    "options": [
-    "A) Type, Print, and Scan text.",
-    "B) Understand, Interpret, and Generate natural language similarly to humans.",
-    "C) Erase, Replace, and Format code.",
-    "D) Listen, Ignore, and Delete data."
-    ],
-    "answer": "B) Understand, Interpret, and Generate natural language similarly to humans.",
-    "explanation": "The continuous historical goal of NLP has been to understand, interpret (using data), and eventually generate target language as humans do. The journey to achieve this goal officially began in the mid-20th century."
-    },
-    {
-    "id": 44,
-    "context": "In the mid-20th century, technology advanced enough to conceptualize using machines for language tasks rather than just mathematical calculations.",
-    "question": "In which decade did actual NLP research truly begin to take shape?",
-    "options": [
-    "A) 1920s",
-    "B) 1950s",
-    "C) 1980s",
-    "D) 2000s"
-    ],
-    "answer": "B) 1950s",
-    "explanation": "The actual field of NLP research started taking place in the 1950s. A specific researcher during this era played a pivotal role in initiating the field."
-    },
-    {
-    "id": 45,
-    "context": "One individual in 1949 wrote a groundbreaking memo suggesting that computers could be used to translate human languages.",
-    "question": "Who is considered the 'father of machine translation'?",
-    "options": [
-    "A) Noam Chomsky",
-    "B) Alan Turing",
-    "C) Warren Weaver",
-    "D) Joseph Weizenbaum"
-    ],
-    "answer": "C) Warren Weaver",
-    "explanation": "Warren Weaver is called the father of machine translation due to his influential 'Translation memorandum' written in 1949. His ideas were heavily influenced by his experiences during World War II."
-    },
-    {
-    "id": 46,
-    "context": "During WWII, militaries used cryptography to encode and decode secret messages. This mathematical approach to communication heavily influenced early NLP.",
-    "question": "Warren Weaver's initial ideas for machine translation were rooted in what mathematical field?",
-    "options": [
-    "A) Calculus",
-    "B) Information Theory (treating language like a secret code)",
-    "C) Quantum Mechanics",
-    "D) Geometry"
-    ],
-    "answer": "B) Information Theory (treating language like a secret code)",
-    "explanation": "Weaver proposed that language is simply a kind of code, much like the secret messages decoded during WWII, rooting his ideas deeply in Information Theory. This inspired the first major push in NLP applications."
-    },
-    {
-    "id": 47,
-    "context": "Because of the geopolitical climate and Weaver's memo, early researchers focused heavily on one specific NLP task above all others.",
-    "question": "What was the very first major NLP application attempted by researchers in the 1950s?",
-    "options": [
-    "A) Speech recognition",
-    "B) Chatbots",
-    "C) Machine Translation",
-    "D) Document summarization"
-    ],
-    "answer": "C) Machine Translation",
-    "explanation": "Machine translation emerged as the first major application in the 1950s, igniting significant interest in NLP. The technology of the 1950s, however, meant these early systems were highly simplistic."
-    },
-    {
-    "id": 48,
-    "context": "Without modern neural networks, early researchers relied on straightforward mapping techniques to translate languages.",
-    "question": "How did the initial machine translation systems of the 1950s function?",
-    "options": [
-    "A) Using large language models and attention mechanisms.",
-    "B) Using simplistic rule-based techniques and dictionary lookups to map source words to target words.",
-    "C) By analyzing audio wavelengths of spoken words.",
-    "D) Utilizing human translators hidden inside machines."
-    ],
-    "answer": "B) Using simplistic rule-based techniques and dictionary lookups to map source words to target words.",
-    "explanation": "Initial systems used simplicity, relying on rule-based techniques, dictionary lookups, and basic word ordering to map source text to target text. This approach led to a highly publicized public demonstration."
-    },
-    {
-    "id": 49,
-    "context": "To prove that machine translation was viable, IBM staged a public demonstration in their New York headquarters translating Russian to English.",
-    "question": "What was the notable 1954 experiment conducted by IBM regarding machine translation?",
-    "options": [
-    "A) The ALPAC experiment",
-    "B) The Georgetown experiment",
-    "C) The Turing Test",
-    "D) The ELIZA demonstration"
-    ],
-    "answer": "B) The Georgetown experiment",
-    "explanation": "The 1954 Georgetown experiment by IBM successfully translated 49 carefully selected Russian chemistry texts into English, astonishing the public. Concurrently, major theoretical breakthroughs were happening in the study of Linguistics."
-    },
-    {
-    "id": 50,
-    "context": "While computer scientists focused on translation, linguists were radically shifting how they viewed human grammar, moving away from purely structuralist views.",
-    "question": "Who revolutionized linguistics in 1957 with the publication of 'Syntactic Structures'?",
-    "options": [
-    "A) Warren Weaver",
-    "B) Joseph Weizenbaum",
-    "C) Noam Chomsky",
-    "D) Charles Fillmore"
-    ],
-    "answer": "C) Noam Chomsky",
-    "explanation": "Noam Chomsky revolutionized the field in 1957 with his book Syntactic Structures, shifting the focus from structuralist views to deeper grammatical analysis. Chomsky introduced a critical theory about how humans formulate language."
-    },
-    {
-    "id": 51,
-    "context": "Chomsky argued that language is not just an arbitrary set of rules, but an innate human cognitive capacity.",
-    "question": "What major theory did Noam Chomsky introduce regarding language grammar?",
-    "options": [
-    "A) Case Grammar",
-    "B) Generative Grammar",
-    "C) Semantic Networks",
-    "D) Conceptual Dependency"
-    ],
-    "answer": "B) Generative Grammar",
-    "explanation": "Chomsky introduced the idea of Generative Grammar, proposing that humans have an innate knowledge of how to generate language based on underlying rules. However, translating these rules via computers proved difficult, as seen in early rule-based MT."
-    },
-    {
-    "id": 52,
-    "context": "Rule-based machine translation requires manually coding word order differences between languages, such as adjective placement.",
-    "question": "In the rule-based translation example of 'the red house' to Spanish, what structural rule must the system account for?",
-    "options": [
-    "A) English places adjectives after nouns, Spanish places them before.",
-    "B) Both languages place adjectives before nouns.",
-    "C) English places adjectives before nouns (red house), while Spanish places nouns before adjectives (casa roja).",
-    "D) Spanish does not use adjectives."
-    ],
-    "answer": "C) English places adjectives before nouns (red house), while Spanish places nouns before adjectives (casa roja).",
-    "explanation": "The system must use a transfer rule to reorder the words because English uses Adjective+Noun, whereas Spanish uses Noun+Adjective. This reordering, however, often wasn't enough to capture deeper language rules like gender."
-    },
-    {
-    "id": 53,
-    "context": "In Spanish, nouns are gendered, meaning words accompanying them (like determiners 'el' or 'la') must match the noun's gender.",
-    "question": "What is a major flaw of simple dictionary lookups in early rule-based translation systems?",
-    "options": [
-    "A) They cannot determine the gender definiteness (e.g., masculine 'el' vs feminine 'la') without knowing the context of the neighboring noun.",
-    "B) They completely ignore verbs.",
-    "C) They can only translate 10 words per minute.",
-    "D) They delete all adjectives from the text."
-    ],
-    "answer": "A) They cannot determine the gender definiteness (e.g., masculine 'el' vs feminine 'la') without knowing the context of the neighboring noun.",
-    "explanation": "A simple dictionary lookup for 'the' might yield 'el' or 'la', but without contextual rules about the upcoming noun's gender, the system fails to output the correct definitive article. Because of these failures, enthusiasm for machine translation began to wane."
-    },
-    {
-    "id": 54,
-    "context": "Despite early optimism and heavy government funding, the outputs of machine translation in the late 1950s and early 60s were riddled with semantic errors.",
-    "question": "What realization did governments come to after evaluating early machine translation outputs?",
-    "options": [
-    "A) That NLP was already perfected and needed no more funding.",
-    "B) That machines were better at translating poetry than scientific texts.",
-    "C) That translating cognitively similar languages was not as straightforward as mapping words, due to semantic barriers.",
-    "D) That machines should only be used to translate dead languages."
-    ],
-    "answer": "C) That translating cognitively similar languages was not as straightforward as mapping words, due to semantic barriers.",
-    "explanation": "Governments realized it was not straightforward to map one language to another due to severe semantic barriers, even between similar languages. This disillusionment led the US government to form an investigative committee."
-    },
-    {
-    "id": 55,
-    "context": "In 1966, an advisory committee investigated the progress of machine translation to decide the future of government funding.",
-    "question": "What was the name of the committee that famously declared fully automatic high-quality machine translation impossible in the near future?",
-    "options": [
-    "A) The Weaver Committee",
-    "B) ALPAC (Automatic Language Processing Advisory Committee)",
-    "C) The Turing Board",
-    "D) The Chomsky Syndicate"
-    ],
-    "answer": "B) ALPAC (Automatic Language Processing Advisory Committee)",
-    "explanation": "The ALPAC committee concluded that building an automatic machine translation system in the near future was impossible, though systems could still aid human translators. This harsh report triggered a dark age for NLP research."
-    },
-    {
-    "id": 56,
-    "context": "Following the ALPAC report, the US government drastically cut funding for computational linguistics, causing research to stagnate.",
-    "question": "What is the term used to describe the period of reduced funding and halted research in NLP following the ALPAC report?",
-    "options": [
-    "A) The AI Renaissance",
-    "B) The Linguistic Boom",
-    "C) The Winter Time (AI Winter)",
-    "D) The Data Drought"
-    ],
-    "answer": "C) The Winter Time (AI Winter)",
-    "explanation": "This period of reduced funding and interest is often referred to as a 'winter time' for NLP and AI research. Despite the funding cuts, a few notable prototype projects still emerged, such as early conversational agents."
-    },
-    {
-    "id": 57,
-    "context": "During the mid-1960s, MIT researcher Joseph Weizenbaum developed a program that could simulate a conversation with a human.",
-    "question": "What was the name of the conversational chatbot developed in 1966 that mimicked a Rogerian psychotherapist?",
-    "options": [
-    "A) ALICE",
-    "B) SIRI",
-    "C) ELIZA",
-    "D) HAL 9000"
-    ],
-    "answer": "C) ELIZA",
-    "explanation": "ELIZA, created by Joseph Weizenbaum in 1966, was an early chatbot that mimicked a psychotherapist asking questions to human users. To function without machine learning, ELIZA had to rely on a clever programming trick."
-    },
-    {
-    "id": 58,
-    "context": "Without modern neural networks, early chatbots like ELIZA could not actually 'understand' the human input.",
-    "question": "How did ELIZA manage to sustain a conversation with users without using machine learning?",
-    "options": [
-    "A) By translating the text to Russian and back.",
-    "B) Using basic regular expressions and pattern matching to trigger pre-coded responses.",
-    "C) By generating new words via a random letter generator.",
-    "D) Using a massive semantic knowledge graph."
-    ],
-    "answer": "B) Using basic regular expressions and pattern matching to trigger pre-coded responses.",
-    "explanation": "ELIZA used simple pre-coded information and regular expressions to perform pattern matching on human inputs, framing questions in response. The success of such machines raised the question: how do we definitively test if a machine is 'intelligent'?"
-    },
-    {
-    "id": 59,
-    "context": "To measure machine intelligence, researchers needed a standard benchmark test to see if a computer's text generation was indistinguishable from a human's.",
-    "question": "Which benchmark test uses an interrogator attempting to distinguish between a computer and a human responder based on a text chat?",
-    "options": [
-    "A) The Georgetown Test",
-    "B) The Chomsky Evaluation",
-    "C) The Turing Test",
-    "D) The ALPAC Standard"
-    ],
-    "answer": "C) The Turing Test",
-    "explanation": "The Turing Test involves a human interrogator talking to both a computer and a human, attempting to determine which is which. If they fail, the computer passes. However, this test is not perfect and has significant flaws."
-    },
-    {
-    "id": 60,
-    "context": "The Turing Test relies entirely on the subjective judgment of a human interrogator, making it susceptible to human error.",
-    "question": "What was a major issue later identified with the Turing Test?",
-    "options": [
-    "A) It took too long to compile the results.",
-    "B) High chances of human bias from the interrogator affecting the evaluation.",
-    "C) Computers became too good at math.",
-    "D) It required the machine to speak aloud instead of typing."
-    ],
-    "answer": "B) High chances of human bias from the interrogator affecting the evaluation.",
-    "explanation": "Because the Turing Test relies on human interaction, it is highly susceptible to the human bias of the interrogator. Moving past these early tests into the 1970s, researchers began focusing on structuring deeper semantic meaning."
-    },
-    {
-    "id": 61,
-    "context": "During the 1970s, despite the 'AI Winter', computational theories of grammar continued to advance, looking deeply at sentence roles.",
-    "question": "What 1970s grammar framework developed by Fillmore focused on the relationship and semantic roles of noun phrases to verbs?",
-    "options": [
-    "A) Generative Grammar",
-    "B) Case Grammar",
-    "C) Statistical Grammar",
-    "D) Recurrent Grammar"
-    ],
-    "answer": "B) Case Grammar",
-    "explanation": "Fillmore's Case Grammar focused on understanding sentence structures by mapping the semantic roles of noun phrases to their respective verbs. Mapping these relationships led to graph-based approaches to meaning."
-    },
-    {
-    "id": 62,
-    "context": "To map relationships between words computationally, researchers began visualizing semantics as connected graphs.",
-    "question": "What graph-based representation became popular in the 1970s to map the relationship across words and sentences?",
-    "options": [
-    "A) Semantic Networks",
-    "B) Attention Maps",
-    "C) Phonotactic Trees",
-    "D) Context Vectors"
-    ],
-    "answer": "A) Semantic Networks",
-    "explanation": "Semantic networks became popular as a graph-based way to represent knowledge and semantic relationships between words. Another popular theory from this era attempted to standardize semantic meaning."
-    },
-    {
-    "id": 63,
-    "context": "Representing meaning required a structured format so the machine could understand the dependency between concepts in a sentence.",
-    "question": "Which theory emphasized understanding the meaning of sentences in a structured format during the 1970s?",
-    "options": [
-    "A) Information Theory",
-    "B) Rule-based Theory",
-    "C) Conceptual Dependency Theory",
-    "D) String Theory"
-    ],
-    "answer": "C) Conceptual Dependency Theory",
-    "explanation": "Conceptual Dependency Theory was heavily used to represent not just syntax, but the underlying semantic meaning of sentences in a structured format. These 1970s structural theories evolved directly into the dominant NLP architecture of the 1980s."
-    },
-    {
-    "id": 64,
-    "context": "In the 1980s, NLP shifted toward symbolic approaches that utilized vast databases of human knowledge to make logical inferences.",
-    "question": "What type of systems dominated the NLP research landscape in the 1980s?",
-    "options": [
-    "A) Statistical Machine Learning models",
-    "B) Expert Systems (Symbolic approaches)",
-    "C) Large Language Models",
-    "D) Neural Networks"
-    ],
-    "answer": "B) Expert Systems (Symbolic approaches)",
-    "explanation": "The 1980s were dominated by Expert Systems, which were symbolic approaches utilizing structured knowledge to infer language meaning. At the core of these Expert Systems were specific databases called ontologies."
-    },
-    {
-    "id": 65,
-    "context": "Expert systems required a way to store domain-specific facts and relationship rules formally.",
-    "question": "What is an 'ontology' in the context of 1980s NLP expert systems?",
-    "options": [
-    "A) A dictionary of phonetic sounds.",
-    "B) A knowledge base containing facts, concepts, and relationships within a specific domain.",
-    "C) An algorithm that generates random text.",
-    "D) A piece of hardware that processes speech."
-    ],
-    "answer": "B) A knowledge base containing facts, concepts, and relationships within a specific domain.",
-    "explanation": "Ontologies are structured knowledge bases containing domain-specific facts, concepts, and relationships used to help machines infer meaning. An ontology allows a machine to use logic to answer questions it hasn't explicitly been told the answer to."
-    },
-    {
-    "id": 66,
-    "context": "If an ontology states 'All humans are mortal' and 'Socrates is a human', the system can use logic to determine Socrates's mortality.",
-    "question": "What does the ontology system infer from the facts 'All humans are mortal' and 'Socrates is a human'?",
-    "options": [
-    "A) Socrates is a god.",
-    "B) Socrates is mortal.",
-    "C) Humans are Socrates.",
-    "D) Socrates invented NLP."
-    ],
-    "answer": "B) Socrates is mortal.",
-    "explanation": "The system uses the ontological relationships to automatically infer that Socrates is mortal, demonstrating logical deduction. However, hand-coding these massive ontologies was incredibly tedious, leading to a massive paradigm shift in the 1990s."
-    },
-    {
-    "id": 67,
-    "context": "In the late 1980s and early 1990s, the tedious nature of hand-coding rules and expert systems was replaced by a revolutionary new approach based on data.",
-    "question": "What major paradigm shift occurred in NLP research during the early 1990s?",
-    "options": [
-    "A) A shift from Statistical models back to Rule-based systems.",
-    "B) A shift from Expert Systems (symbolic) to Statistical Modeling.",
-    "C) A shift from text processing to purely audio processing.",
-    "D) A shift away from computer science entirely."
-    ],
-    "answer": "B) A shift from Expert Systems (symbolic) to Statistical Modeling.",
-    "explanation": "The early 90s marked a transition from symbolic expert systems to statistical modeling, treating language as vast amounts of data rather than hardcoded rules. This statistical approach was powered by a new technological concept."
-    },
-    {
-    "id": 68,
-    "context": "Instead of humans writing rules, systems began to figure out the rules on their own by analyzing large datasets.",
-    "question": "What computational concept became the root of NLP in the 1990s to derive rules automatically?",
-    "options": [
-    "A) Machine Learning",
-    "B) Case Grammar",
-    "C) The Turing Engine",
-    "D) Analog processing"
-    ],
-    "answer": "A) Machine Learning",
-    "explanation": "Machine Learning became rooted in NLP, allowing systems to utilize statistical patterns to learn linguistic rules automatically from data. Alongside new algorithms, improved hardware allowed for the first complex neural architectures."
-    },
-    {
-    "id": 69,
-    "context": "Advancements in computational power in the late 90s allowed for architectures that could process sequences of data, though they weren't widely adopted yet.",
-    "question": "Which architecture was built during the late 80s/90s to process sequential data, though not vastly used until later?",
-    "options": [
-    "A) Transformer Models",
-    "B) Recurrent Neural Networks (RNNs)",
-    "C) Word Embeddings",
-    "D) Large Language Models"
-    ],
-    "answer": "B) Recurrent Neural Networks (RNNs)",
-    "explanation": "Recurrent Neural Networks (RNNs) were built during this time due to hardware advancements, setting the stage for future sequence processing. By the 2000s, this neural network approach became the gold standard."
-    },
-    {
-    "id": 70,
-    "context": "In the 2000s, NLP researchers began heavily replicating the interconnected nature of the human brain to process language.",
-    "question": "What technology saw increased use in the 2000s to predict next words by replicating human brain connections?",
-    "options": [
-    "A) Dictionary Lookups",
-    "B) Ontologies",
-    "C) Neural Networks",
-    "D) Syntactic Trees"
-    ],
-    "answer": "C) Neural Networks",
-    "explanation": "Neural networks, which conceptually replicate human brain connections, became heavily used in the 2000s primarily for language modeling tasks like next-word prediction. To feed words into these neural networks, they had to be converted into math."
-    },
-    {
-    "id": 71,
-    "context": "Neural networks cannot read text directly; words must be represented as numbers. In the 2000s, researchers found a way to represent the 'meaning' of a word mathematically.",
-    "question": "What advancement allowed words to be represented as dense mathematical vectors based on their meaning?",
-    "options": [
-    "A) Word Embeddings",
-    "B) The ALPAC technique",
-    "C) Generative Grammar Arrays",
-    "D) Phonological integers"
-    ],
-    "answer": "A) Word Embeddings",
-    "explanation": "Word embeddings revolutionized text representation by mapping words to dense vectors, where words with similar meanings (like 'mathematics' and 'statistics') are placed close together mathematically. This vector mapping allowed for literal mathematical equations using words."
-    },
-    {
-    "id": 72,
-    "context": "Because word embeddings group semantic relationships logically, you can perform vector arithmetic to find related concepts.",
-    "question": "In the famous word embedding vector arithmetic example, what is the result of 'King - Man + Woman'?",
-    "options": [
-    "A) Princess",
-    "B) Prince",
-    "C) Queen",
-    "D) Emperor"
-    ],
-    "answer": "C) Queen",
-    "explanation": "Word vectors proved that logical relationships could be derived mathematically, famously showing that the vector for King minus Man plus Woman equals the vector for Queen. Combining embeddings with statistics led to massive commercial success."
-    },
-    {
-    "id": 73,
-    "context": "In 2006, the power of statistical models and embeddings culminated in the first widely successful commercial application of NLP.",
-    "question": "Which company released a commercially successful automatic document translation system in 2006 using statistical methods?",
-    "options": [
-    "A) IBM",
-    "B) Microsoft",
-    "C) Apple",
-    "D) Google (Google Translate)"
-    ],
-    "answer": "D) Google (Google Translate)",
-    "explanation": "Google released Google Translate in 2006, marking the first commercially successful NLP system using statistical methods for automatic translation. The architecture for translation improved vastly in 2014 with a specific new model structure."
-    },
-    {
-    "id": 74,
-    "context": "In 2014, researchers designed a system that compresses an input sentence into a context vector, and then unpacks it into a target language.",
-    "question": "What model became highly popular in 2014 to handle sequence-to-sequence problems like machine translation?",
-    "options": [
-    "A) The Eliza Model",
-    "B) The Encoder-Decoder Model",
-    "C) The Rule-Based Dictionary",
-    "D) The ALPAC Framework"
-    ],
-    "answer": "B) The Encoder-Decoder Model",
-    "explanation": "The Encoder-Decoder model became popular in 2014, allowing a source sequence to be encoded into a context vector and then decoded into the target sequence. This model was eventually revolutionized by eliminating recurrence entirely."
-    },
-    {
-    "id": 75,
-    "context": "A landmark paper titled 'Attention is All You Need' changed NLP forever by allowing models to look at all parts of a sentence simultaneously rather than sequentially.",
-    "question": "Which architecture revolutionized NLP by capturing long-range dependencies using solely attention mechanisms, leading to modern LLMs?",
-    "options": [
-    "A) Recurrent Neural Networks (RNNs)",
-    "B) Convolutional Neural Networks (CNNs)",
-    "C) Transformers",
-    "D) Expert Systems"
-    ],
-    "answer": "C) Transformers",
-    "explanation": "Transformers revolutionized NLP by eliminating recurrent connections and relying on attention mechanisms to capture long-range text dependencies efficiently, directly leading to powerful Large Language Models (LLMs) like GPT. This concludes our deep dive into the evolution of NLP."
-    }
+  {id:1,context:"The NLP course spans 12 weeks, covering fundamental concepts to advanced techniques, divided into two distinct halves handled by different professors.",question:"What is the primary focus of the first six weeks of the NLP course?",options:["A) Advanced neural networks and Transformers","B) Real-world applications like question answering","C) Linguistic basics, essential text processing, and classical sequence models","D) Large language models and efficient fine-tuning"],answer:"C) Linguistic basics, essential text processing, and classical sequence models",explanation:"The first six weeks focus on foundational linguistic basics and text processing before moving to advanced topics."},
+  {id:2,context:"Natural language is central to human society, evolved through daily interaction to express complex ideas and emotions.",question:"Which of the following best defines a 'natural language'?",options:["A) A programming language created for computer execution","B) A language artificially constructed for business purposes","C) A communication system primarily used by animals like bees and cats","D) A language naturally evolved and spoken by humans for everyday communication"],answer:"D) A language naturally evolved and spoken by humans for everyday communication",explanation:"Natural language is constructed by human beings through social interaction and evolved naturally along with humans."},
+  {id:3,context:"While humans speak natural languages, they have also created other types of languages, such as Python or Java, for specific non-communication tasks.",question:"How do artificial languages like Python differ from natural languages?",options:["A) Artificial languages are used for everyday human communication.","B) Artificial languages are designed for computer instructions, not natural human evolution.","C) Artificial languages evolved naturally along with human beings.","D) Artificial languages have more phonetic sounds than natural languages."],answer:"B) Artificial languages are designed for computer instructions, not natural human evolution.",explanation:"Artificial languages are specifically created for programming computers, lacking the natural evolution and nuances of human spoken language."},
+  {id:4,context:"Constructed auxiliary languages (like Esperanto) are created by humans for easier communication, often for business, but they lack certain organic traits.",question:"What is a key difference in grammar between natural languages and constructed auxiliary languages?",options:["A) Constructed languages have irregularities, while natural languages are perfectly regular.","B) Natural languages have irregular patterns (e.g., child to children), while constructed languages follow strict regular patterns.","C) Natural languages cannot be pluralized.","D) Constructed languages do not use pluralization at all."],answer:"B) Natural languages have irregular patterns (e.g., child to children), while constructed languages follow strict regular patterns.",explanation:"Natural languages have irregular patterns (like 'child' to 'children'), whereas constructed languages rely on regular, predictable patterns."},
+  {id:5,context:"Animals like honeybees and cats communicate with each other using dances, meows, or gestures to indicate food or play.",question:"Why is non-human communication not considered equivalent to human natural language?",options:["A) Animal communication has an infinite number of words.","B) Animal communication is limited to a small number of sounds and gestures.","C) Animals use syntax and semantics just like humans.","D) Animal communication is artificially constructed."],answer:"B) Animal communication is limited to a small number of sounds and gestures.",explanation:"Non-human communication is highly limited in the number of sounds and gestures, unlike the vast and complex system of human language."},
+  {id:6,context:"Human language has a massive vocabulary that is never entirely fixed, allowing us to name new discoveries.",question:"What demonstrates the limitless vocabulary capacity of human natural language?",options:["A) We can easily count the exact number of words in any language.","B) Vocabulary sizes decrease as society advances.","C) We can continually invent new words, such as naming a new star in the sky.","D) Humans are limited to a strict 100,000 words."],answer:"C) We can continually invent new words, such as naming a new star in the sky.",explanation:"Human languages are predominantly increasing; we can continuously add new words, making it impossible to count a definitive total."},
+  {id:7,context:"Humans utilize their vast vocabularies not just for basic survival, but for a wide array of complex cognitive expressions.",question:"Which of the following is a key capability of human natural language?",options:["A) Restricting communication only to factual statements.","B) Expressing complex information, sharing knowledge, and conveying feelings.","C) Ensuring every human speaks identical sentences.","D) Preventing the expression of abstract ideas."],answer:"B) Expressing complex information, sharing knowledge, and conveying feelings.",explanation:"Humans use language to express complex information, feelings, exchange knowledge, and interact socially."},
+  {id:8,context:"When a person speaks Hindi and another speaks Telugu, they are using systems with vastly different lexical choices and structures.",question:"What does the diversity among different natural languages primarily reflect?",options:["A) The universal grammar shared by all animals.","B) A gateway to human culture and society.","C) The artificial rules set by early computer programmers.","D) The lack of structure in human communication."],answer:"B) A gateway to human culture and society.",explanation:"Language diversity carries heavy cultural loads, making language a gateway to expressing specific human cultures and societies."},
+  {id:9,context:"In regions with high linguistic diversity, a common shared language is often adopted so people from different backgrounds can communicate confidently.",question:"What is the technical term used to describe a common bridging language?",options:["A) Lingua Franca","B) Esperanto","C) Artificial Language","D) Mental Lexicon"],answer:"A) Lingua Franca",explanation:"A lingua franca is a common language that bridges two different language speakers, allowing them to communicate confidently."},
+  {id:10,context:"Linguistic diversity is vast globally, though many languages are currently facing endangerment.",question:"Approximately how many spoken languages exist in the world today?",options:["A) 1,000","B) 3,500","C) 7,000","D) 10,000"],answer:"C) 7,000",explanation:"There are almost around 7,000 spoken languages in the world today, though some are endangered."},
+  {id:11,context:"Global languages are not distributed evenly across continents; certain regions house massive clusters of linguistic diversity.",question:"What proportion of the world's spoken languages are found in Asia?",options:["A) One-tenth","B) One-quarter","C) One-third","D) One-half"],answer:"C) One-third",explanation:"One-third of the world's 7,000 languages are spoken in Asia, with South Asia playing a very important role."},
+  {id:12,context:"India is a multilingual country known for housing major distinct language families across its diverse regions.",question:"Which of the following is NOT listed as one of the four major language families in India?",options:["A) Dravidian","B) Indo-Aryan","C) Tibeto-Burman","D) Uralic"],answer:"D) Uralic",explanation:"The four major language families in India are Dravidian, Indo-Aryan, Tibeto-Burman, and Austroasiatic. Uralic is not one of them."},
+  {id:13,context:"When languages from different families are spoken in a shared geographic area for a long time, they begin to influence each other.",question:"What happens across Indian languages due to their coexistence in the same region over a long period?",options:["A) They completely merge into a single artificial language.","B) They show commonalities and converged features.","C) They lose their original grammatical rules entirely.","D) They become impossible for machines to translate."],answer:"B) They show commonalities and converged features.",explanation:"Due to coexistence over a long period, Indian languages across different families show commonalities and converged features."},
+  {id:14,context:"Human languages possess immense diversity and complexity, making them challenging for machines to interpret.",question:"What is the primary goal of Natural Language Processing (NLP)?",options:["A) To create new artificial programming languages.","B) To force humans to communicate in binary code.","C) To enable computer systems to understand, interpret, and generate human language.","D) To limit the vocabulary humans are allowed to use."],answer:"C) To enable computer systems to understand, interpret, and generate human language.",explanation:"NLP aims to make computer systems capable of understanding, interpreting, and generating human language just as humans do."},
+  {id:15,context:"To process language, humans rely on a cognitive storage of words and information. NLP attempts to replicate this structure in machines.",question:"What is the outcome of NLP fields that act as models of human language?",options:["A) Compilers","B) Language Models","C) Operating Systems","D) Syntax Checkers"],answer:"B) Language Models",explanation:"The outcome of NLP is the creation of multiple language models that act as computational equivalents of human language."},
+  {id:16,context:"Humans store a massive number of words and syntactical rules in their minds, retrieving them seamlessly during communication.",question:"What is the term used for the storage of words and language information in the human mind?",options:["A) Mental Lexicon","B) Digital Dictionary","C) Knowledge Graph","D) Phonotactic Core"],answer:"A) Mental Lexicon",explanation:"The storage of words and structural knowledge in our minds is referred to as the mental lexicon."},
+  {id:17,context:"Even when explaining the exact same concept, two humans will rarely use the exact same sentence structure or vocabulary.",question:"What is a major challenge for machines attempting to mimic human language generation?",options:["A) Humans only use 100 words in daily life.","B) No two humans speak in the exact same fashion when explaining the same concept.","C) Machines generate language too emotionally.","D) Humans rely purely on mathematical logic to speak."],answer:"B) No two humans speak in the exact same fashion when explaining the same concept.",explanation:"A significant complexity is that human generation is highly diverse; no two humans explain a concept in the exactly identical way."},
+  {id:18,context:"Mimicking the human mind computationally requires deep knowledge of both language structure and algorithms.",question:"NLP is described as a highly interdisciplinary field combining which two primary areas?",options:["A) Hardware engineering and quantum physics","B) Computational linguistics and machine learning","C) Psychology and biological anatomy","D) Sociology and historical literature"],answer:"B) Computational linguistics and machine learning",explanation:"NLP combines the scientific study of language (Linguistics) with computational techniques like Machine Learning and Deep Learning."},
+  {id:19,context:"Modern computational models cannot learn human language through instinct; they require a tangible input to study.",question:"What is the core element or input required to build NLP models that represent human language?",options:["A) Hardcoded grammatical rules","B) Structured, massive amounts of Data","C) Human brainwaves","D) Audio recordings of animal sounds"],answer:"B) Structured, massive amounts of Data",explanation:"Huge amounts of structured data serve as the core representation of human language, acting as the primary input from which machines learn."},
+  {id:20,context:"The ultimate aim of NLP is to instill human-like language capabilities into AI, allowing machines to perform tasks usually reserved for humans.",question:"Which of the following is a direct application of giving artificial intelligence the capability of human language generation?",options:["A) Designing stronger computer hardware.","B) Building chatbots that answer domain-specific questions.","C) Curing biological viruses.","D) Improving the battery life of mobile phones."],answer:"B) Building chatbots that answer domain-specific questions.",explanation:"Instilling human-like language into machines enables applications like chatbots, which can answer questions intelligently in a specific domain."},
+  {id:21,context:"In places like India, language barriers are significant. NLP aims to solve this by translating text seamlessly from a source language to a target language.",question:"What is a strict requirement for a high-quality machine translation system?",options:["A) It should summarize the text to be as short as possible.","B) It should generate exactly the same information in the target language without over- or under-representing it.","C) It should always translate everything into English first.","D) It should intentionally change the meaning to fit the target culture."],answer:"B) It should generate exactly the same information in the target language without over- or under-representing it.",explanation:"A machine translation system must generate the exact same information without under-representing or over-representing the original meaning."},
+  {id:22,context:"Diagrammatically, researchers view the task of NLP as taking the immense, complex capabilities of human cognition and mapping them to a machine.",question:"What is the high-level diagrammatic goal of NLP mentioned in the lecture?",options:["A) To make humans think more like computers.","B) To make the machine function like a human mind with loads of information in language production.","C) To restrict machine output to simple binary codes.","D) To separate linguistics entirely from computer science."],answer:"B) To make the machine function like a human mind with loads of information in language production.",explanation:"The diagrammatic goal of NLP is to take the complex processing of the human mind and replicate it in machines so they function like humans in language production."},
+  {id:23,context:"Language processing in machines is not a monolithic task; it is divided into interpreting incoming text and producing outgoing text.",question:"What are the two major aspects of Natural Language Processing?",options:["A) Syntax Parsing and Dictionary Lookup","B) Speech Recognition and Image Processing","C) Natural Language Understanding (NLU) and Natural Language Generation (NLG)","D) Data Mining and Web Scraping"],answer:"C) Natural Language Understanding (NLU) and Natural Language Generation (NLG)",explanation:"NLP requires both Natural Language Understanding (NLU) for interpretation and Natural Language Generation (NLG) for production."},
+  {id:24,context:"Before a machine can converse, it needs humans to structure and provide knowledge so it can interpret language correctly.",question:"How does the lecture characterize Natural Language Understanding (NLU)?",options:["A) It is work done automatically by the machine to speak.","B) It is work done 'for the machine' by providing it with structuralized data to represent human language.","C) It is entirely focused on sound articulation.","D) It generates text independently of human input."],answer:"B) It is work done 'for the machine' by providing it with structuralized data to represent human language.",explanation:"NLU is described as work done 'for the machine' — researchers structure and provide the necessary data so the algorithm can interpret human language."},
+  {id:25,context:"Once interpretation is complete, the system transitions from passively receiving data to actively creating it.",question:"How is Natural Language Generation (NLG) characterized compared to NLU?",options:["A) It is done by humans to teach the machine.","B) It is done automatically 'by the machine' to produce language on its own.","C) It strictly focuses on reading text.","D) It requires no prior understanding of the language."],answer:"B) It is done automatically 'by the machine' to produce language on its own.",explanation:"While NLU is for the machine, NLG is done 'by the machine'. Once it understands the input, it generates language automatically."},
+  {id:26,context:"When a human looks at an image of a cat sitting on a mat, they instantly use their world knowledge and visual context to comprehend the scene.",question:"In the human language production process, what is the 'Conceptualization' stage?",options:["A) Pronouncing the letters out loud.","B) Formulating the exact English words in mind.","C) Understanding the situation internally, such as recognizing an animal (cat) sitting on a mat.","D) Checking the grammatical syntax of a sentence."],answer:"C) Understanding the situation internally, such as recognizing an animal (cat) sitting on a mat.",explanation:"Conceptualization is the internal mental understanding of a scene using world knowledge."},
+  {id:27,context:"After conceptualizing a scene, a human must decide which specific language to use (like English) and select the corresponding vocabulary.",question:"What happens during the 'Formulation' stage of human language production?",options:["A) The physical vocal cords vibrate to create sound.","B) The conceptualization is converted into words and sentences applicable to the chosen language (e.g., matching the concept of a feline to 'C-A-T').","C) The brain visually registers the image.","D) The context of the discourse is analyzed."],answer:"B) The conceptualization is converted into words and sentences applicable to the chosen language (e.g., matching the concept of a feline to 'C-A-T').",explanation:"Formulation involves taking the internal concept and constructing it into specific words and grammatically correct sentences."},
+  {id:28,context:"With the sentence mentally formulated, the human must now use their physical biology to communicate the sentence to others.",question:"What is the 'Articulation' phase in human language production?",options:["A) Reading a text silently.","B) Memorizing a dictionary definition.","C) Using phonetic knowledge and articulatory organs (like the tongue and palate) to produce physical sound systems.","D) Extracting meaning from a complex sentence."],answer:"C) Using phonetic knowledge and articulatory organs (like the tongue and palate) to produce physical sound systems.",explanation:"Articulation is the final generation part where humans use their phonetic knowledge and physical vocal organs to produce the sounds of the words."},
+  {id:29,context:"Linguistics breaks language down into several modular components, starting with the most basic building blocks: physical sounds.",question:"Which linguistic component deals specifically with the sound systems of a language?",options:["A) Syntax","B) Pragmatics","C) Phonology","D) Semantics"],answer:"C) Phonology",explanation:"Phonology is the study of the sound systems of a language."},
+  {id:30,context:"Not every combination of sounds is permissible in every language. English allows 'C' and a vowel, but forbids starting a word with 'C' immediately followed by 'T'.",question:"What term describes the specific rules that dictate how sounds can be combined in a given language?",options:["A) Morphology","B) Phonotactics","C) Pragmatics","D) Generative Grammar"],answer:"B) Phonotactics",explanation:"Phonotactics refers to the language-specific rules that dictate what combinations of sounds are allowed or disallowed."},
+  {id:31,context:"Indian speakers often pronounce the English word 'school' as 'ischool' because their native language rules influence their English pronunciation.",question:"Why do some native Indian language speakers pronounce 'school' as 'ischool'?",options:["A) Because 'ischool' is the correct Old English pronunciation.","B) Because their native language's phonotactics do not allow the combination of 'S' and 'K' sounds at the start of a word.","C) Because the morphological root of school demands an 'i' prefix.","D) Because machine translation systems trained them to do so."],answer:"B) Because their native language's phonotactics do not allow the combination of 'S' and 'K' sounds at the start of a word.",explanation:"The native speakers' phonotactics restrict certain consonant clusters like 'sk' at the beginning of words."},
+  {id:32,context:"Sounds combine to form words, and words can be modified to change their grammatical function (like adding 's' for plural).",question:"Which linguistic component studies word formation and word structure?",options:["A) Phonology","B) Morphology","C) Syntax","D) Pragmatics"],answer:"B) Morphology",explanation:"Morphology is the study of word formation and how words are structured."},
+  {id:33,context:"A collection of words does not make sense unless ordered properly. 'The red house' is correct in English, but 'House the red' is not.",question:"What does the linguistic component 'Syntax' govern?",options:["A) How words are structurally and grammatically combined to form acceptable sentences.","B) The physical vibration of vocal cords.","C) The historical origin of a word.","D) The contextual social meaning of a joke."],answer:"A) How words are structurally and grammatically combined to form acceptable sentences.",explanation:"Syntax is the study of how words are combined together to create well-formed, grammatically acceptable sentence structures."},
+  {id:34,context:"A sentence can be perfectly grammatical but completely meaningless (e.g., 'Colorless green ideas sleep furiously').",question:"Which linguistic component focuses purely on the meaning of words and sentences?",options:["A) Morphology","B) Phonology","C) Semantics","D) Phonotactics"],answer:"C) Semantics",explanation:"Semantics is the study of meaning derived from words and sentence structures."},
+  {id:35,context:"Saying 'It is cold in here' might mean a statement of temperature, or it might be a request to close the window, depending on the situation.",question:"What does the study of 'Pragmatics' involve?",options:["A) Word pluralization rules.","B) Meaning derived from discourse or a specific real-world context.","C) Identifying the root origin of verbs.","D) Translating text to binary code."],answer:"B) Meaning derived from discourse or a specific real-world context.",explanation:"Pragmatics deals with context, analyzing whether a sentence makes sense or implies a specific action within a given discourse."},
+  {id:36,context:"Machines lack human life experience, making context and reasoning difficult to program.",question:"What is mentioned as a major challenge when machines process natural language?",options:["A) Machines read text too quickly.","B) Machines have infinite reasoning capabilities.","C) Understanding context is difficult due to machines' limited reasoning and lack of background knowledge.","D) Machines refuse to learn from data."],answer:"C) Understanding context is difficult due to machines' limited reasoning and lack of background knowledge.",explanation:"Machines struggle with context because they often possess limited reasoning and lack the ambient background knowledge naturally held by humans."},
+  {id:37,context:"Since models learn entirely from human-provided data, any imperfections in that data are absorbed by the machine.",question:"Why is 'bias' a significant challenge in NLP models?",options:["A) Bias causes the computer hardware to overheat.","B) Bias in training data reflects societal flaws, which the model then mimics and distributes to millions of users.","C) Bias prevents the machine from understanding English syntax.","D) Bias makes the translation system delete all vowels."],answer:"B) Bias in training data reflects societal flaws, which the model then mimics and distributes to millions of users.",explanation:"Bias in the training data directly reflects in the model's output, which is problematic since these models are deployed to millions of people."},
+  {id:38,context:"Humans interact using innate abilities that go far beyond statistical likelihoods, utilizing empathy and imagination.",question:"Which of the following traits is inherently present in human language processing but generally absent in machines?",options:["A) Rapid processing of petabytes of data.","B) Emotional intelligence, common sense reasoning, and creativity.","C) Perfect translation of 7,000 languages simultaneously.","D) Continuous operation without sleep."],answer:"B) Emotional intelligence, common sense reasoning, and creativity.",explanation:"Humans naturally possess emotional intelligence, common sense reasoning, creativity, and context adaptation, allowing them to learn from minimal data unlike machines."},
+  {id:39,context:"Without common sense or emotional intelligence, machines must rely heavily on mathematics to understand language.",question:"How do machines derive understanding from their knowledge source (data)?",options:["A) Through innate biological intuition.","B) By utilizing complex statistical patterns derived from massive amounts of data.","C) By asking humans to explain every word manually.","D) By feeling the emotional weight of a sentence."],answer:"B) By utilizing complex statistical patterns derived from massive amounts of data.",explanation:"Machines rely purely on data, using complex statistical patterns to derive understanding and perform language tasks efficiently."},
+  {id:40,context:"A human might describe the same event cheerfully or angrily depending on their mood, whereas a machine does not experience these biological states.",question:"What advantage does a machine have over a human regarding language generation consistency?",options:["A) Machines change their answers based on if they are 'hungry' for data.","B) Machines are consistent in how they answer, whereas humans vary based on emotional or physical states.","C) Machines always generate poetry when asked factual questions.","D) Humans are perfectly consistent while machines hallucinate constantly."],answer:"B) Machines are consistent in how they answer, whereas humans vary based on emotional or physical states.",explanation:"Machines are highly consistent because they are unaffected by emotions like happiness, sadness, or hunger."},
+  {id:41,context:"An average human is bilingual or perhaps knows three languages. Processing global communication requires far broader capabilities.",question:"In what specific scale do machines drastically outperform a single human being?",options:["A) Emotional empathy generation.","B) Multilingual capabilities, potentially interacting with all 7,000 global languages.","C) Understanding complex sarcastic jokes.","D) Creating entirely new artificial languages."],answer:"B) Multilingual capabilities, potentially interacting with all 7,000 global languages.",explanation:"While humans usually only know a few languages, machines have the scalable potential to interact with all 7,000 languages in the world."},
+  {id:42,context:"NLP technology is embedded in various modern tools to make human life easier, from predictive texting to smart home devices.",question:"Which of the following is an expected practical application of NLP mentioned in the lecture?",options:["A) Controlling the weather.","B) Smart home assistants (like switching on a TV), document summarization, and predictive text.","C) Physical robot manufacturing.","D) Generating limitless electrical power."],answer:"B) Smart home assistants (like switching on a TV), document summarization, and predictive text.",explanation:"NLP enables applications like smart assistants for the elderly, document summarization, machine translation, and predictive text."},
+  {id:43,context:"Before exploring the intricate history of NLP, we must review the core objectives that have driven this research for decades.",question:"What are the three core goals of NLP that have driven its historical development?",options:["A) Type, Print, and Scan text.","B) Understand, Interpret, and Generate natural language similarly to humans.","C) Erase, Replace, and Format code.","D) Listen, Ignore, and Delete data."],answer:"B) Understand, Interpret, and Generate natural language similarly to humans.",explanation:"The continuous historical goal of NLP has been to understand, interpret (using data), and eventually generate target language as humans do."},
+  {id:44,context:"In the mid-20th century, technology advanced enough to conceptualize using machines for language tasks rather than just mathematical calculations.",question:"In which decade did actual NLP research truly begin to take shape?",options:["A) 1920s","B) 1950s","C) 1980s","D) 2000s"],answer:"B) 1950s",explanation:"The actual field of NLP research started taking place in the 1950s."},
+  {id:45,context:"One individual in 1949 wrote a groundbreaking memo suggesting that computers could be used to translate human languages.",question:"Who is considered the 'father of machine translation'?",options:["A) Noam Chomsky","B) Alan Turing","C) Warren Weaver","D) Joseph Weizenbaum"],answer:"C) Warren Weaver",explanation:"Warren Weaver is called the father of machine translation due to his influential 'Translation memorandum' written in 1949."},
+  {id:46,context:"During WWII, militaries used cryptography to encode and decode secret messages. This mathematical approach to communication heavily influenced early NLP.",question:"Warren Weaver's initial ideas for machine translation were rooted in what mathematical field?",options:["A) Calculus","B) Information Theory (treating language like a secret code)","C) Quantum Mechanics","D) Geometry"],answer:"B) Information Theory (treating language like a secret code)",explanation:"Weaver proposed that language is simply a kind of code, much like the secret messages decoded during WWII, rooting his ideas deeply in Information Theory."},
+  {id:47,context:"Because of the geopolitical climate and Weaver's memo, early researchers focused heavily on one specific NLP task above all others.",question:"What was the very first major NLP application attempted by researchers in the 1950s?",options:["A) Speech recognition","B) Chatbots","C) Machine Translation","D) Document summarization"],answer:"C) Machine Translation",explanation:"Machine translation emerged as the first major application in the 1950s, igniting significant interest in NLP."},
+  {id:48,context:"Without modern neural networks, early researchers relied on straightforward mapping techniques to translate languages.",question:"How did the initial machine translation systems of the 1950s function?",options:["A) Using large language models and attention mechanisms.","B) Using simplistic rule-based techniques and dictionary lookups to map source words to target words.","C) By analyzing audio wavelengths of spoken words.","D) Utilizing human translators hidden inside machines."],answer:"B) Using simplistic rule-based techniques and dictionary lookups to map source words to target words.",explanation:"Initial systems used simplicity, relying on rule-based techniques, dictionary lookups, and basic word ordering to map source text to target text."},
+  {id:49,context:"To prove that machine translation was viable, IBM staged a public demonstration in their New York headquarters translating Russian to English.",question:"What was the notable 1954 experiment conducted by IBM regarding machine translation?",options:["A) The ALPAC experiment","B) The Georgetown experiment","C) The Turing Test","D) The ELIZA demonstration"],answer:"B) The Georgetown experiment",explanation:"The 1954 Georgetown experiment by IBM successfully translated 49 carefully selected Russian chemistry texts into English."},
+  {id:50,context:"While computer scientists focused on translation, linguists were radically shifting how they viewed human grammar.",question:"Who revolutionized linguistics in 1957 with the publication of 'Syntactic Structures'?",options:["A) Warren Weaver","B) Joseph Weizenbaum","C) Noam Chomsky","D) Charles Fillmore"],answer:"C) Noam Chomsky",explanation:"Noam Chomsky revolutionized the field in 1957 with his book Syntactic Structures, shifting the focus to deeper grammatical analysis."},
+  {id:51,context:"Chomsky argued that language is not just an arbitrary set of rules, but an innate human cognitive capacity.",question:"What major theory did Noam Chomsky introduce regarding language grammar?",options:["A) Case Grammar","B) Generative Grammar","C) Semantic Networks","D) Conceptual Dependency"],answer:"B) Generative Grammar",explanation:"Chomsky introduced the idea of Generative Grammar, proposing that humans have an innate knowledge of how to generate language based on underlying rules."},
+  {id:52,context:"Rule-based machine translation requires manually coding word order differences between languages, such as adjective placement.",question:"In the rule-based translation example of 'the red house' to Spanish, what structural rule must the system account for?",options:["A) English places adjectives after nouns, Spanish places them before.","B) Both languages place adjectives before nouns.","C) English places adjectives before nouns (red house), while Spanish places nouns before adjectives (casa roja).","D) Spanish does not use adjectives."],answer:"C) English places adjectives before nouns (red house), while Spanish places nouns before adjectives (casa roja).",explanation:"The system must use a transfer rule to reorder the words because English uses Adjective+Noun, whereas Spanish uses Noun+Adjective."},
+  {id:53,context:"In Spanish, nouns are gendered, meaning words accompanying them must match the noun's gender.",question:"What is a major flaw of simple dictionary lookups in early rule-based translation systems?",options:["A) They cannot determine the gender definiteness (e.g., masculine 'el' vs feminine 'la') without knowing the context of the neighboring noun.","B) They completely ignore verbs.","C) They can only translate 10 words per minute.","D) They delete all adjectives from the text."],answer:"A) They cannot determine the gender definiteness (e.g., masculine 'el' vs feminine 'la') without knowing the context of the neighboring noun.",explanation:"A simple dictionary lookup for 'the' might yield 'el' or 'la', but without contextual rules about the upcoming noun's gender, the system fails."},
+  {id:54,context:"Despite early optimism and heavy government funding, the outputs of machine translation in the late 1950s and early 60s were riddled with semantic errors.",question:"What realization did governments come to after evaluating early machine translation outputs?",options:["A) That NLP was already perfected and needed no more funding.","B) That machines were better at translating poetry than scientific texts.","C) That translating cognitively similar languages was not as straightforward as mapping words, due to semantic barriers.","D) That machines should only be used to translate dead languages."],answer:"C) That translating cognitively similar languages was not as straightforward as mapping words, due to semantic barriers.",explanation:"Governments realized it was not straightforward to map one language to another due to severe semantic barriers."},
+  {id:55,context:"In 1966, an advisory committee investigated the progress of machine translation to decide the future of government funding.",question:"What was the name of the committee that famously declared fully automatic high-quality machine translation impossible in the near future?",options:["A) The Weaver Committee","B) ALPAC (Automatic Language Processing Advisory Committee)","C) The Turing Board","D) The Chomsky Syndicate"],answer:"B) ALPAC (Automatic Language Processing Advisory Committee)",explanation:"The ALPAC committee concluded that building an automatic machine translation system in the near future was impossible."},
+  {id:56,context:"Following the ALPAC report, the US government drastically cut funding for computational linguistics, causing research to stagnate.",question:"What is the term used to describe the period of reduced funding and halted research in NLP following the ALPAC report?",options:["A) The AI Renaissance","B) The Linguistic Boom","C) The Winter Time (AI Winter)","D) The Data Drought"],answer:"C) The Winter Time (AI Winter)",explanation:"This period of reduced funding and interest is often referred to as a 'winter time' for NLP and AI research."},
+  {id:57,context:"During the mid-1960s, MIT researcher Joseph Weizenbaum developed a program that could simulate a conversation with a human.",question:"What was the name of the conversational chatbot developed in 1966 that mimicked a Rogerian psychotherapist?",options:["A) ALICE","B) SIRI","C) ELIZA","D) HAL 9000"],answer:"C) ELIZA",explanation:"ELIZA, created by Joseph Weizenbaum in 1966, was an early chatbot that mimicked a psychotherapist asking questions to human users."},
+  {id:58,context:"Without modern neural networks, early chatbots like ELIZA could not actually 'understand' the human input.",question:"How did ELIZA manage to sustain a conversation with users without using machine learning?",options:["A) By translating the text to Russian and back.","B) Using basic regular expressions and pattern matching to trigger pre-coded responses.","C) By generating new words via a random letter generator.","D) Using a massive semantic knowledge graph."],answer:"B) Using basic regular expressions and pattern matching to trigger pre-coded responses.",explanation:"ELIZA used simple pre-coded information and regular expressions to perform pattern matching on human inputs, framing questions in response."},
+  {id:59,context:"To measure machine intelligence, researchers needed a standard benchmark test to see if a computer's text generation was indistinguishable from a human's.",question:"Which benchmark test uses an interrogator attempting to distinguish between a computer and a human responder based on a text chat?",options:["A) The Georgetown Test","B) The Chomsky Evaluation","C) The Turing Test","D) The ALPAC Standard"],answer:"C) The Turing Test",explanation:"The Turing Test involves a human interrogator talking to both a computer and a human, attempting to determine which is which."},
+  {id:60,context:"The Turing Test relies entirely on the subjective judgment of a human interrogator, making it susceptible to human error.",question:"What was a major issue later identified with the Turing Test?",options:["A) It took too long to compile the results.","B) High chances of human bias from the interrogator affecting the evaluation.","C) Computers became too good at math.","D) It required the machine to speak aloud instead of typing."],answer:"B) High chances of human bias from the interrogator affecting the evaluation.",explanation:"Because the Turing Test relies on human interaction, it is highly susceptible to the human bias of the interrogator."},
+  {id:61,context:"During the 1970s, despite the 'AI Winter', computational theories of grammar continued to advance, looking deeply at sentence roles.",question:"What 1970s grammar framework developed by Fillmore focused on the relationship and semantic roles of noun phrases to verbs?",options:["A) Generative Grammar","B) Case Grammar","C) Statistical Grammar","D) Recurrent Grammar"],answer:"B) Case Grammar",explanation:"Fillmore's Case Grammar focused on understanding sentence structures by mapping the semantic roles of noun phrases to their respective verbs."},
+  {id:62,context:"To map relationships between words computationally, researchers began visualizing semantics as connected graphs.",question:"What graph-based representation became popular in the 1970s to map the relationship across words and sentences?",options:["A) Semantic Networks","B) Attention Maps","C) Phonotactic Trees","D) Context Vectors"],answer:"A) Semantic Networks",explanation:"Semantic networks became popular as a graph-based way to represent knowledge and semantic relationships between words."},
+  {id:63,context:"Representing meaning required a structured format so the machine could understand the dependency between concepts in a sentence.",question:"Which theory emphasized understanding the meaning of sentences in a structured format during the 1970s?",options:["A) Information Theory","B) Rule-based Theory","C) Conceptual Dependency Theory","D) String Theory"],answer:"C) Conceptual Dependency Theory",explanation:"Conceptual Dependency Theory was heavily used to represent not just syntax, but the underlying semantic meaning of sentences in a structured format."},
+  {id:64,context:"In the 1980s, NLP shifted toward symbolic approaches that utilized vast databases of human knowledge to make logical inferences.",question:"What type of systems dominated the NLP research landscape in the 1980s?",options:["A) Statistical Machine Learning models","B) Expert Systems (Symbolic approaches)","C) Large Language Models","D) Neural Networks"],answer:"B) Expert Systems (Symbolic approaches)",explanation:"The 1980s were dominated by Expert Systems, which were symbolic approaches utilizing structured knowledge to infer language meaning."},
+  {id:65,context:"Expert systems required a way to store domain-specific facts and relationship rules formally.",question:"What is an 'ontology' in the context of 1980s NLP expert systems?",options:["A) A dictionary of phonetic sounds.","B) A knowledge base containing facts, concepts, and relationships within a specific domain.","C) An algorithm that generates random text.","D) A piece of hardware that processes speech."],answer:"B) A knowledge base containing facts, concepts, and relationships within a specific domain.",explanation:"Ontologies are structured knowledge bases containing domain-specific facts, concepts, and relationships used to help machines infer meaning."},
+  {id:66,context:"If an ontology states 'All humans are mortal' and 'Socrates is a human', the system can use logic to determine Socrates's mortality.",question:"What does the ontology system infer from the facts 'All humans are mortal' and 'Socrates is a human'?",options:["A) Socrates is a god.","B) Socrates is mortal.","C) Humans are Socrates.","D) Socrates invented NLP."],answer:"B) Socrates is mortal.",explanation:"The system uses the ontological relationships to automatically infer that Socrates is mortal, demonstrating logical deduction."},
+  {id:67,context:"In the late 1980s and early 1990s, the tedious nature of hand-coding rules and expert systems was replaced by a revolutionary new approach based on data.",question:"What major paradigm shift occurred in NLP research during the early 1990s?",options:["A) A shift from Statistical models back to Rule-based systems.","B) A shift from Expert Systems (symbolic) to Statistical Modeling.","C) A shift from text processing to purely audio processing.","D) A shift away from computer science entirely."],answer:"B) A shift from Expert Systems (symbolic) to Statistical Modeling.",explanation:"The early 90s marked a transition from symbolic expert systems to statistical modeling, treating language as vast amounts of data rather than hardcoded rules."},
+  {id:68,context:"Instead of humans writing rules, systems began to figure out the rules on their own by analyzing large datasets.",question:"What computational concept became the root of NLP in the 1990s to derive rules automatically?",options:["A) Machine Learning","B) Case Grammar","C) The Turing Engine","D) Analog processing"],answer:"A) Machine Learning",explanation:"Machine Learning became rooted in NLP, allowing systems to utilize statistical patterns to learn linguistic rules automatically from data."},
+  {id:69,context:"Advancements in computational power in the late 90s allowed for architectures that could process sequences of data.",question:"Which architecture was built during the late 80s/90s to process sequential data, though not vastly used until later?",options:["A) Transformer Models","B) Recurrent Neural Networks (RNNs)","C) Word Embeddings","D) Large Language Models"],answer:"B) Recurrent Neural Networks (RNNs)",explanation:"Recurrent Neural Networks (RNNs) were built during this time due to hardware advancements, setting the stage for future sequence processing."},
+  {id:70,context:"In the 2000s, NLP researchers began heavily replicating the interconnected nature of the human brain to process language.",question:"What technology saw increased use in the 2000s to predict next words by replicating human brain connections?",options:["A) Dictionary Lookups","B) Ontologies","C) Neural Networks","D) Syntactic Trees"],answer:"C) Neural Networks",explanation:"Neural networks became heavily used in the 2000s primarily for language modeling tasks like next-word prediction."},
+  {id:71,context:"Neural networks cannot read text directly; words must be represented as numbers. In the 2000s, researchers found a way to represent the 'meaning' of a word mathematically.",question:"What advancement allowed words to be represented as dense mathematical vectors based on their meaning?",options:["A) Word Embeddings","B) The ALPAC technique","C) Generative Grammar Arrays","D) Phonological integers"],answer:"A) Word Embeddings",explanation:"Word embeddings revolutionized text representation by mapping words to dense vectors, where words with similar meanings are placed close together mathematically."},
+  {id:72,context:"Because word embeddings group semantic relationships logically, you can perform vector arithmetic to find related concepts.",question:"In the famous word embedding vector arithmetic example, what is the result of 'King - Man + Woman'?",options:["A) Princess","B) Prince","C) Queen","D) Emperor"],answer:"C) Queen",explanation:"Word vectors proved that logical relationships could be derived mathematically, famously showing King - Man + Woman = Queen."},
+  {id:73,context:"In 2006, the power of statistical models and embeddings culminated in the first widely successful commercial application of NLP.",question:"Which company released a commercially successful automatic document translation system in 2006 using statistical methods?",options:["A) IBM","B) Microsoft","C) Apple","D) Google (Google Translate)"],answer:"D) Google (Google Translate)",explanation:"Google released Google Translate in 2006, marking the first commercially successful NLP system using statistical methods."},
+  {id:74,context:"In 2014, researchers designed a system that compresses an input sentence into a context vector, and then unpacks it into a target language.",question:"What model became highly popular in 2014 to handle sequence-to-sequence problems like machine translation?",options:["A) The Eliza Model","B) The Encoder-Decoder Model","C) The Rule-Based Dictionary","D) The ALPAC Framework"],answer:"B) The Encoder-Decoder Model",explanation:"The Encoder-Decoder model became popular in 2014, allowing a source sequence to be encoded into a context vector and then decoded into the target sequence."},
+  {id:75,context:"A landmark paper titled 'Attention is All You Need' changed NLP forever by allowing models to look at all parts of a sentence simultaneously.",question:"Which architecture revolutionized NLP by capturing long-range dependencies using solely attention mechanisms, leading to modern LLMs?",options:["A) Recurrent Neural Networks (RNNs)","B) Convolutional Neural Networks (CNNs)","C) Transformers","D) Expert Systems"],answer:"C) Transformers",explanation:"Transformers revolutionized NLP by eliminating recurrent connections and relying on attention mechanisms to capture long-range text dependencies, directly leading to powerful LLMs."}
 ];
 
-// App State
-let currentIndex = 0;
-let phase = 'context'; // 'context', 'question', 'explanation'
-let userSelectedAnswer = null;
+let idx = 0, phase = 'context', chosen = null, correct = 0, wrong = 0;
 
-// DOM Elements
-const container = document.getElementById('card-container');
-const progressBar = document.getElementById('progress-bar');
-const progressText = document.getElementById('progress-text');
-
-// Initialize the App
-function init() {
-    currentIndex = 0;
-    phase = 'context';
-    render();
+function acc() {
+  const total = correct + wrong;
+  return total === 0 ? '--' : Math.round((correct / total) * 100) + '%';
 }
 
-// Render Control
+function updateHUD() {
+  document.getElementById('hdr-correct').textContent = correct;
+  document.getElementById('hdr-wrong').textContent = wrong;
+  document.getElementById('hdr-acc').textContent = acc();
+  const pct = idx >= quizData.length ? 100 : Math.round((idx / quizData.length) * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-text').textContent =
+    idx >= quizData.length ? 'COMPLETE' : `Q ${idx + 1} / ${quizData.length}`;
+}
+
 function render() {
-    updateProgress();
-    container.innerHTML = ''; 
-
-    if (currentIndex >= quizData.length) {
-        renderScoreScreen();
-        return;
-    }
-
-    if (phase === 'context') {
-        renderContext();
-    } else if (phase === 'question') {
-        renderQuestion();
-    } else if (phase === 'explanation') {
-        renderExplanation();
-    }
+  updateHUD();
+  const c = document.getElementById('card-container');
+  c.innerHTML = '';
+  if (idx >= quizData.length) { renderFinal(c); return; }
+  if (phase === 'context')      renderCtx(c);
+  else if (phase === 'question') renderQ(c);
+  else                           renderExp(c);
 }
 
-// Render Phases
-function renderContext() {
-    const item = quizData[currentIndex];
-    
-    container.innerHTML = `
-        <div class="card-label">Context</div>
-        <div class="content-text">${item.context}</div>
-        <button id="btn-next" class="action-btn">Next: Question</button>
-    `;
-
-    document.getElementById('btn-next').addEventListener('click', () => {
-        phase = 'question';
-        render();
-    });
+function renderCtx(c) {
+  const q = quizData[idx];
+  c.innerHTML = `
+    <div class="sf-label">context // node ${idx + 1}</div>
+    <div class="sf-content">${q.context}</div>
+    <button class="sf-action" id="btn-fwd">PROCEED TO QUERY &gt;</button>
+  `;
+  document.getElementById('btn-fwd').onclick = () => { phase = 'question'; render(); };
 }
 
-function renderQuestion() {
-    const item = quizData[currentIndex];
-    userSelectedAnswer = null;
-    
-    let optionsHtml = '';
-
-    // Check if it's MCQ or Text Input (pedagogical general case handler)
-    if (item.options && item.options.length > 0) {
-        optionsHtml = `<ul class="options-list">
-            ${item.options.map((opt, i) => `
-                <li>
-                    <button class="option-btn" data-value="${opt.replace(/"/g, '&quot;')}">${opt}</button>
-                </li>
-            `).join('')}
-        </ul>`;
-    } else {
-        optionsHtml = `
-            <input type="text" id="text-input-ans" class="text-input" placeholder="Type your answer here..." autocomplete="off">
-        `;
-    }
-
-    container.innerHTML = `
-        <div class="card-label">Question</div>
-        <div class="content-text">${item.question}</div>
-        ${optionsHtml}
-        <button id="btn-submit" class="action-btn" disabled>Submit Answer</button>
-    `;
-
-    const btnSubmit = document.getElementById('btn-submit');
-
-    if (item.options && item.options.length > 0) {
-        const optionBtns = document.querySelectorAll('.option-btn');
-        optionBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                // remove selected class from all
-                optionBtns.forEach(b => b.classList.remove('selected'));
-                // add to clicked
-                e.target.classList.add('selected');
-                userSelectedAnswer = e.target.getAttribute('data-value');
-                btnSubmit.disabled = false;
-            });
-        });
-    } else {
-        const textInput = document.getElementById('text-input-ans');
-        textInput.addEventListener('input', (e) => {
-            userSelectedAnswer = e.target.value;
-            btnSubmit.disabled = userSelectedAnswer.trim() === '';
-        });
-    }
-
-    btnSubmit.addEventListener('click', () => {
-        phase = 'explanation';
-        render();
-    });
+function renderQ(c) {
+  const q = quizData[idx];
+  chosen = null;
+  const opts = q.options.map(o =>
+    `<li><button class="sf-opt-btn" data-val="${o.replace(/"/g, '&quot;')}">${o}</button></li>`
+  ).join('');
+  c.innerHTML = `
+    <div class="sf-label">query // node ${idx + 1}</div>
+    <div class="sf-content">${q.question}</div>
+    <ul class="sf-options">${opts}</ul>
+    <button class="sf-action" id="btn-sub" disabled>SUBMIT RESPONSE &gt;</button>
+  `;
+  const sub = document.getElementById('btn-sub');
+  c.querySelectorAll('.sf-opt-btn').forEach(btn => {
+    btn.onclick = () => {
+      c.querySelectorAll('.sf-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      chosen = btn.getAttribute('data-val');
+      sub.disabled = false;
+    };
+  });
+  sub.onclick = () => {
+    if (chosen === q.answer) correct++; else wrong++;
+    phase = 'explanation';
+    render();
+  };
 }
 
-function renderExplanation() {
-    const item = quizData[currentIndex];
-    let isCorrect = false;
-
-    // Strict evaluation for typing based questions (ignoring spaces & lowercasing)
-    if (item.options && item.options.length > 0) {
-        isCorrect = userSelectedAnswer === item.answer;
-    } else {
-        const cleanUser = userSelectedAnswer.replace(/\s+/g, '').toLowerCase();
-        const cleanTarget = item.answer.replace(/\s+/g, '').toLowerCase();
-        isCorrect = cleanUser === cleanTarget;
-    }
-
-    const feedbackClass = isCorrect ? 'feedback-correct' : 'feedback-incorrect';
-    const feedbackTitle = isCorrect ? 'Correct!' : 'Incorrect';
-
-    const btnText = currentIndex === quizData.length - 1 ? 'Finish Quiz' : 'Next Context';
-
-    container.innerHTML = `
-        <div class="card-label">Answer & Explanation</div>
-        
-        <div class="feedback-box ${feedbackClass}">
-            ${feedbackTitle}
-        </div>
-        
-        <div style="margin-bottom: 16px;">
-            <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 4px;">Correct Answer:</p>
-            <p style="font-weight: 600;">${item.answer}</p>
-        </div>
-
-        <div class="explanation-text">
-            ${item.explanation}
-        </div>
-
-        <button id="btn-next-phase" class="action-btn">${btnText}</button>
-    `;
-
-    document.getElementById('btn-next-phase').addEventListener('click', () => {
-        currentIndex++;
-        phase = 'context';
-        render();
-    });
+function renderExp(c) {
+  const q = quizData[idx];
+  const ok = chosen === q.answer;
+  const btnLbl = idx === quizData.length - 1 ? 'FINISH MISSION' : 'NEXT NODE &gt;';
+  const opts = q.options.map(o => {
+    let cls = 'sf-opt-btn';
+    if (o === q.answer)            cls += ' correct-reveal';
+    else if (o === chosen && !ok)  cls += ' wrong-reveal';
+    return `<li><button class="${cls}" disabled>${o}</button></li>`;
+  }).join('');
+  c.innerHTML = `
+    <div class="sf-label">analysis // node ${idx + 1}</div>
+    <div class="sf-feedback ${ok ? 'ok' : 'fail'}">${ok ? '[ CORRECT ]' : '[ INCORRECT ]'}</div>
+    <ul class="sf-options">${opts}</ul>
+    <div class="sf-explanation">${q.explanation}</div>
+    <button class="sf-action" id="btn-nxt">${btnLbl}</button>
+  `;
+  document.getElementById('btn-nxt').onclick = () => { idx++; phase = 'context'; render(); };
 }
 
-function renderScoreScreen() {
-    container.innerHTML = `
-        <div class="score-screen">
-            <h2>Quiz Complete!</h2>
-            <p>You have successfully finished all 75 questions.</p>
-            <p>For the best pedagogical outcome, repeat this quiz 2-3 times until the narrative flow feels entirely familiar.</p>
-            <button id="btn-restart" class="action-btn" style="margin-top: 16px;">Restart Quiz</button>
-        </div>
-    `;
-
-    document.getElementById('btn-restart').addEventListener('click', () => {
-        init();
-    });
+function renderFinal(c) {
+  const total = correct + wrong;
+  const pct = total === 0 ? 0 : Math.round((correct / total) * 100);
+  const grade      = pct >= 90 ? 'EXCEPTIONAL' : pct >= 70 ? 'PROFICIENT' : pct >= 50 ? 'DEVELOPING' : 'RETRY';
+  const gradeColor = pct >= 90 ? 'var(--sf-success)' : pct >= 70 ? 'var(--sf-accent)' : pct >= 50 ? '#ffaa00' : 'var(--sf-error)';
+  c.innerHTML = `
+    <div class="sf-final">
+      <div class="sf-final-title">// mission complete //</div>
+      <div class="sf-final-stats">
+        <div class="sf-stat-box"><span class="num" style="color:var(--sf-success)">${correct}</span><span class="lbl">correct</span></div>
+        <div class="sf-stat-box"><span class="num" style="color:var(--sf-error)">${wrong}</span><span class="lbl">incorrect</span></div>
+        <div class="sf-stat-box"><span class="num" style="color:var(--sf-accent)">${pct}%</span><span class="lbl">accuracy</span></div>
+      </div>
+      <div class="sf-grade" style="color:${gradeColor}">${grade}</div>
+      <div class="sf-final-note">For best pedagogical outcomes, repeat this quiz 2–3 times until the narrative flow feels entirely familiar.</div>
+      <button class="sf-action" id="btn-restart">RESTART SEQUENCE &gt;</button>
+    </div>
+  `;
+  document.getElementById('btn-restart').onclick = () => {
+    idx = 0; phase = 'context'; chosen = null; correct = 0; wrong = 0; render();
+  };
 }
 
-function updateProgress() {
-    if (currentIndex >= quizData.length) {
-        progressBar.style.width = '100%';
-        progressText.innerText = `Completed`;
-        return;
-    }
-    const percent = (currentIndex / quizData.length) * 100;
-    progressBar.style.width = `${percent}%`;
-    progressText.innerText = `Question ${currentIndex + 1} of ${quizData.length}`;
-}
-
-// Start application
-init();
+render();
