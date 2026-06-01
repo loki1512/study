@@ -604,334 +604,112 @@ const quizData = [
 
 ];
 
-// App State
-// App State
-let currentIndex = 0;
-let phase = "context";
-let userSelectedAnswer = null;
+let idx = 0, phase = 'context', chosen = null, correct = 0, wrong = 0;
 
-let correctCount = 0;
-let wrongCount = 0;
-
-// DOM Elements
-const container = document.getElementById("card-container");
-
-const progressBar = document.getElementById("prog-fill");
-const progressText = document.getElementById("prog-text");
-
-const correctEl = document.getElementById("hdr-correct");
-const wrongEl = document.getElementById("hdr-wrong");
-const accuracyEl = document.getElementById("hdr-acc");
-
-// Initialize
-function init() {
-    currentIndex = 0;
-    phase = "context";
-
-    correctCount = 0;
-    wrongCount = 0;
-
-    updateScoreDisplay();
-    render();
+function acc() {
+  const total = correct + wrong;
+  return total === 0 ? '--' : Math.round((correct / total) * 100) + '%';
 }
 
-// Score Display
-function updateScoreDisplay() {
-    correctEl.textContent = correctCount;
-    wrongEl.textContent = wrongCount;
-
-    const total = correctCount + wrongCount;
-
-    const accuracy =
-        total === 0
-            ? 0
-            : Math.round((correctCount / total) * 100);
-
-    accuracyEl.textContent = `${accuracy}%`;
+function updateHUD() {
+  document.getElementById('hdr-correct').textContent = correct;
+  document.getElementById('hdr-wrong').textContent = wrong;
+  document.getElementById('hdr-acc').textContent = acc();
+  const pct = idx >= quizData.length ? 100 : Math.round((idx / quizData.length) * 100);
+  // document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-text').textContent =
+    idx >= quizData.length ? 'COMPLETE' : `Q ${idx + 1} / ${quizData.length}`;
 }
 
-// Render Controller
 function render() {
-
-    updateProgress();
-
-    if (currentIndex >= quizData.length) {
-        renderScoreScreen();
-        return;
-    }
-
-    if (phase === "context") {
-        renderContext();
-    }
-    else if (phase === "question") {
-        renderQuestion();
-    }
-    else {
-        renderExplanation();
-    }
+  updateHUD();
+  const c = document.getElementById('card-container');
+  c.innerHTML = '';
+  if (idx >= quizData.length) { renderFinal(c); return; }
+  if (phase === 'context')      renderCtx(c);
+  else if (phase === 'question') renderQ(c);
+  else                           renderExp(c);
 }
 
-// Context Screen
-function renderContext() {
-
-    const item = quizData[currentIndex];
-
-    container.innerHTML = `
-        <div class="sf-label">
-            Context
-        </div>
-
-        <div class="sf-content">
-            ${item.context}
-        </div>
-
-        <button
-            id="btn-next"
-            class="sf-action"
-        >
-            Next: Question
-        </button>
-    `;
-
-    document
-        .getElementById("btn-next")
-        .addEventListener("click", () => {
-            phase = "question";
-            render();
-        });
+function renderCtx(c) {
+  const q = quizData[idx];
+  c.innerHTML = `
+    <div class="sf-label">context // node ${idx + 1}</div>
+    <div class="sf-content">${q.context}</div>
+    <button class="sf-action" id="btn-fwd">PROCEED TO QUERY &gt;</button>
+  `;
+  document.getElementById('btn-fwd').onclick = () => { phase = 'question'; render(); };
 }
 
-// Question Screen
-function renderQuestion() {
-
-    const item = quizData[currentIndex];
-
-    userSelectedAnswer = null;
-
-    const optionsHtml = `
-        <ul class="sf-options">
-            ${item.options.map(option => `
-                <li>
-                    <button
-                        class="sf-opt-btn"
-                        data-value="${option.replace(/"/g, '&quot;')}"
-                    >
-                        ${option}
-                    </button>
-                </li>
-            `).join("")}
-        </ul>
-    `;
-
-    container.innerHTML = `
-        <div class="sf-label">
-            Question
-        </div>
-
-        <div class="sf-content">
-            ${item.question}
-        </div>
-
-        ${optionsHtml}
-
-        <button
-            id="btn-submit"
-            class="sf-action"
-            disabled
-        >
-            Submit Answer
-        </button>
-    `;
-
-    const submitBtn =
-        document.getElementById("btn-submit");
-
-    const optionBtns =
-        document.querySelectorAll(".sf-opt-btn");
-
-    optionBtns.forEach(btn => {
-
-        btn.addEventListener("click", () => {
-
-            optionBtns.forEach(
-                b => b.classList.remove("selected")
-            );
-
-            btn.classList.add("selected");
-
-            userSelectedAnswer =
-                btn.dataset.value;
-
-            submitBtn.disabled = false;
-        });
-
-    });
-
-    submitBtn.addEventListener("click", () => {
-        phase = "explanation";
-        render();
-    });
+function renderQ(c) {
+  const q = quizData[idx];
+  chosen = null;
+  const opts = q.options.map(o =>
+    `<li><button class="sf-opt-btn" data-val="${o.replace(/"/g, '&quot;')}">${o}</button></li>`
+  ).join('');
+  c.innerHTML = `
+    <div class="sf-label">query // node ${idx + 1}</div>
+    <div class="sf-content">${q.question}</div>
+    <ul class="sf-options">${opts}</ul>
+    <button class="sf-action" id="btn-sub" disabled>SUBMIT RESPONSE &gt;</button>
+  `;
+  const sub = document.getElementById('btn-sub');
+  c.querySelectorAll('.sf-opt-btn').forEach(btn => {
+    btn.onclick = () => {
+      c.querySelectorAll('.sf-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      chosen = btn.getAttribute('data-val');
+      sub.disabled = false;
+    };
+  });
+  sub.onclick = () => {
+    if (chosen === q.answer) correct++; else wrong++;
+    phase = 'explanation';
+    render();
+  };
 }
 
-// Explanation Screen
-function renderExplanation() {
-
-    const item = quizData[currentIndex];
-
-    const isCorrect =
-        userSelectedAnswer === item.answer;
-
-    if (isCorrect) {
-        correctCount++;
-    } else {
-        wrongCount++;
-    }
-
-    updateScoreDisplay();
-
-    const feedbackClass =
-        isCorrect ? "ok" : "fail";
-
-    const feedbackText =
-        isCorrect ? "Correct!" : "Incorrect";
-
-    const btnText =
-        currentIndex === quizData.length - 1
-            ? "Finish Quiz"
-            : "Next Context";
-
-    container.innerHTML = `
-        <div class="sf-label">
-            Answer & Explanation
-        </div>
-
-        <div class="sf-feedback ${feedbackClass}">
-            ${feedbackText}
-        </div>
-
-        <div class="sf-content">
-            <strong>Correct Answer:</strong>
-            ${item.answer}
-        </div>
-
-        <div class="sf-explanation">
-            ${item.explanation}
-        </div>
-
-        <button
-            id="btn-next-phase"
-            class="sf-action"
-        >
-            ${btnText}
-        </button>
-    `;
-
-    document
-        .getElementById("btn-next-phase")
-        .addEventListener("click", () => {
-
-            currentIndex++;
-            phase = "context";
-
-            render();
-        });
+function renderExp(c) {
+  const q = quizData[idx];
+  const ok = chosen === q.answer;
+  const btnLbl = idx === quizData.length - 1 ? 'FINISH MISSION' : 'NEXT NODE &gt;';
+  const opts = q.options.map(o => {
+    let cls = 'sf-opt-btn';
+    if (o === q.answer)            cls += ' correct-reveal';
+    else if (o === chosen && !ok)  cls += ' wrong-reveal';
+    return `<li><button class="${cls}" disabled>${o}</button></li>`;
+  }).join('');
+  c.innerHTML = `
+    <div class="sf-label">analysis // node ${idx + 1}</div>
+    <div class="sf-feedback ${ok ? 'ok' : 'fail'}">${ok ? '[ CORRECT ]' : '[ INCORRECT ]'}</div>
+    <ul class="sf-options">${opts}</ul>
+    <div class="sf-explanation">${q.explanation}</div>
+    <button class="sf-action" id="btn-nxt">${btnLbl}</button>
+  `;
+  document.getElementById('btn-nxt').onclick = () => { idx++; phase = 'context'; render(); };
 }
 
-// Final Screen
-function renderScoreScreen() {
-
-    const total =
-        correctCount + wrongCount;
-
-    const accuracy =
-        total === 0
-            ? 0
-            : Math.round(
-                (correctCount / total) * 100
-            );
-
-    container.innerHTML = `
-        <div class="sf-final">
-
-            <div class="sf-final-title">
-                Quiz Complete
-            </div>
-
-            <div class="sf-final-stats">
-
-                <div class="sf-stat-box">
-                    <span class="num">
-                        ${correctCount}
-                    </span>
-                    <span class="lbl">
-                        Correct
-                    </span>
-                </div>
-
-                <div class="sf-stat-box">
-                    <span class="num">
-                        ${wrongCount}
-                    </span>
-                    <span class="lbl">
-                        Wrong
-                    </span>
-                </div>
-
-                <div class="sf-stat-box">
-                    <span class="num">
-                        ${accuracy}%
-                    </span>
-                    <span class="lbl">
-                        Accuracy
-                    </span>
-                </div>
-
-            </div>
-
-            <div class="sf-final-note">
-                Repeat the quiz until the
-                concept flow becomes
-                second nature.
-            </div>
-
-            <button
-                id="btn-restart"
-                class="sf-action"
-            >
-                Restart Quiz
-            </button>
-
-        </div>
-    `;
-
-    document
-        .getElementById("btn-restart")
-        .addEventListener("click", init);
+function renderFinal(c) {
+  const total = correct + wrong;
+  const pct = total === 0 ? 0 : Math.round((correct / total) * 100);
+  const grade      = pct >= 90 ? 'EXCEPTIONAL' : pct >= 70 ? 'PROFICIENT' : pct >= 50 ? 'DEVELOPING' : 'RETRY';
+  const gradeColor = pct >= 90 ? 'var(--sf-success)' : pct >= 70 ? 'var(--sf-accent)' : pct >= 50 ? '#ffaa00' : 'var(--sf-error)';
+  c.innerHTML = `
+    <div class="sf-final">
+      <div class="sf-final-title">// mission complete //</div>
+      <div class="sf-final-stats">
+        <div class="sf-stat-box"><span class="num" style="color:var(--sf-success)">${correct}</span><span class="lbl">correct</span></div>
+        <div class="sf-stat-box"><span class="num" style="color:var(--sf-error)">${wrong}</span><span class="lbl">incorrect</span></div>
+        <div class="sf-stat-box"><span class="num" style="color:var(--sf-accent)">${pct}%</span><span class="lbl">accuracy</span></div>
+      </div>
+      <div class="sf-grade" style="color:${gradeColor}">${grade}</div>
+      <div class="sf-final-note">For best pedagogical outcomes, repeat this quiz 2–3 times until the narrative flow feels entirely familiar.</div>
+      <button class="sf-action" id="btn-restart">RESTART SEQUENCE &gt;</button>
+    </div>
+  `;
+  document.getElementById('btn-restart').onclick = () => {
+    idx = 0; phase = 'context'; chosen = null; correct = 0; wrong = 0; render();
+  };
 }
 
-// Progress
-function updateProgress() {
-
-    if (currentIndex >= quizData.length) {
-
-        progressBar.style.width = "100%";
-
-        progressText.textContent =
-            "Completed";
-
-        return;
-    }
-
-    const percent =
-        ((currentIndex + 1)
-            / quizData.length) * 100;
-
-    progressBar.style.width =
-        `${percent}%`;
-
-    progressText.textContent =
-        `Q ${currentIndex + 1} / ${quizData.length}`;
-}
-
-// Start App
-init();
+render();
