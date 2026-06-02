@@ -659,6 +659,7 @@ const quizData =
 let currentIndex = 0;
 let phase = "context";
 let userSelectedAnswer = null;
+let answeredQuestions = [];
 
 let correctCount = 0;
 let wrongCount = 0;
@@ -680,6 +681,7 @@ function init() {
 
     correctCount = 0;
     wrongCount = 0;
+    answeredQuestions = [];
 
     updateScoreDisplay();
     render();
@@ -698,6 +700,138 @@ function updateScoreDisplay() {
             : Math.round((correctCount / total) * 100);
 
     accuracyEl.textContent = `${accuracy}%`;
+}
+
+function refreshScoreCounts() {
+    correctCount =
+        answeredQuestions.filter(answer => answer?.isCorrect).length;
+
+    wrongCount =
+        answeredQuestions.filter(answer => answer && !answer.isCorrect).length;
+}
+
+function recordAnswer() {
+    if (answeredQuestions[currentIndex]) {
+        return;
+    }
+
+    const item = quizData[currentIndex];
+
+    answeredQuestions[currentIndex] = {
+        selected: userSelectedAnswer,
+        isCorrect: userSelectedAnswer === item.answer
+    };
+
+    refreshScoreCounts();
+    updateScoreDisplay();
+}
+
+function previousReviewButton() {
+    return currentIndex > 0
+        ? `
+            <button
+                id="btn-prev-review"
+                class="sf-action sf-action-secondary"
+            >
+                Previous
+            </button>
+        `
+        : "";
+}
+
+function formatRanges(numbers) {
+    const ranges = [];
+    let start = numbers[0];
+    let end = numbers[0];
+
+    for (let i = 1; i <= numbers.length; i++) {
+        if (numbers[i] === end + 1) {
+            end = numbers[i];
+            continue;
+        }
+
+        ranges.push(start === end ? `${start}` : `${start}-${end}`);
+        start = numbers[i];
+        end = numbers[i];
+    }
+
+    return ranges.join(", ");
+}
+
+function answeredQuestionRange() {
+    const numbers = answeredQuestions
+        .map((answer, index) => answer ? index + 1 : null)
+        .filter(Boolean);
+
+    return formatRanges(numbers);
+}
+
+function questionGlimpse(question) {
+    return question.length > 58
+        ? `${question.slice(0, 58)}...`
+        : question;
+}
+
+function bindPreviousReview() {
+    const previousBtn =
+        document.getElementById("btn-prev-review");
+
+    if (!previousBtn) {
+        return;
+    }
+
+    previousBtn.addEventListener("click", () => {
+        currentIndex--;
+        phase = "explanation";
+        render();
+    });
+}
+
+function bindAnsweredJump() {
+    const jumpInput =
+        document.getElementById("answered-jump");
+    const preview =
+        document.getElementById("answered-preview");
+
+    if (!jumpInput || !preview) {
+        return;
+    }
+
+    const updatePreview = () => {
+        const targetIndex = Number(jumpInput.value) - 1;
+        const answer = answeredQuestions[targetIndex];
+
+        preview.textContent =
+            answer
+                ? `Question ${targetIndex + 1}: ${questionGlimpse(quizData[targetIndex].question)}`
+                : `Allowed values: ${answeredQuestionRange()}`;
+    };
+
+    const jumpToInput = () => {
+        const targetIndex = Number(jumpInput.value) - 1;
+
+        if (!answeredQuestions[targetIndex]) {
+            updatePreview();
+            return;
+        }
+
+        currentIndex = targetIndex;
+        phase = "explanation";
+        render();
+    };
+
+    jumpInput.addEventListener("input", updatePreview);
+    jumpInput.addEventListener("change", updatePreview);
+
+    document
+        .getElementById("btn-jump")
+        .addEventListener("click", jumpToInput);
+
+    updatePreview();
+}
+
+function clearKeyboardHandler() {
+    document.onkeydown = null;
 }
 
 // Render Controller
@@ -723,6 +857,7 @@ function render() {
 
 // Context Screen
 function renderContext() {
+    clearKeyboardHandler();
 
     const item = quizData[currentIndex];
 
@@ -753,6 +888,7 @@ function renderContext() {
 
 // Question Screen
 function renderQuestion() {
+    clearKeyboardHandler();
 
     const item = quizData[currentIndex];
 
@@ -799,45 +935,75 @@ function renderQuestion() {
     const optionBtns =
         document.querySelectorAll(".sf-opt-btn");
 
+    const selectOption = (btn) => {
+        optionBtns.forEach(
+            b => b.classList.remove("selected")
+        );
+
+        btn.classList.add("selected");
+
+        userSelectedAnswer =
+            btn.dataset.value;
+
+        submitBtn.disabled = false;
+    };
+
     optionBtns.forEach(btn => {
 
         btn.addEventListener("click", () => {
-
-            optionBtns.forEach(
-                b => b.classList.remove("selected")
-            );
-
-            btn.classList.add("selected");
-
-            userSelectedAnswer =
-                btn.dataset.value;
-
-            submitBtn.disabled = false;
+            selectOption(btn);
         });
 
     });
 
-    submitBtn.addEventListener("click", () => {
+    const submitAnswer = () => {
+        recordAnswer();
         phase = "explanation";
         render();
-    });
+    };
+
+    submitBtn.addEventListener("click", submitAnswer);
+
+    document.onkeydown = (event) => {
+        const optionNumber = Number(event.key);
+
+        if (Number.isInteger(optionNumber)
+            && optionNumber >= 1
+            && optionNumber <= optionBtns.length) {
+            event.preventDefault();
+            selectOption(optionBtns[optionNumber - 1]);
+            return;
+        }
+
+        if (event.key !== "Enter") {
+            return;
+        }
+
+        event.preventDefault();
+
+        if (!userSelectedAnswer) {
+            selectOption(optionBtns[0]);
+            return;
+        }
+
+        submitAnswer();
+    };
 }
 
 // Explanation Screen
 function renderExplanation() {
+    clearKeyboardHandler();
 
     const item = quizData[currentIndex];
 
+    const recordedAnswer =
+        answeredQuestions[currentIndex] || {
+            selected: userSelectedAnswer,
+            isCorrect: userSelectedAnswer === item.answer
+        };
+
     const isCorrect =
-        userSelectedAnswer === item.answer;
-
-    if (isCorrect) {
-        correctCount++;
-    } else {
-        wrongCount++;
-    }
-
-    updateScoreDisplay();
+        recordedAnswer.isCorrect;
 
     const feedbackClass =
         isCorrect ? "ok" : "fail";
@@ -860,6 +1026,11 @@ function renderExplanation() {
         </div>
 
         <div class="sf-content">
+            <strong>Question:</strong>
+            ${item.question}
+        </div>
+
+        <div class="sf-content">
             <strong>Correct Answer:</strong>
             ${item.answer}
         </div>
@@ -868,27 +1039,79 @@ function renderExplanation() {
             ${item.explanation}
         </div>
 
-        <button
-            id="btn-next-phase"
-            class="sf-action"
-        >
-            ${btnText}
-        </button>
+        <div class="sf-review-jump">
+            <label for="answered-jump">
+                Jump to
+            </label>
+
+            <input
+                id="answered-jump"
+                type="number"
+                min="1"
+                max="${quizData.length}"
+                value="${currentIndex + 1}"
+                inputmode="numeric"
+            >
+
+            <span class="sf-review-allowed">
+                Allowed: ${answeredQuestionRange()}
+            </span>
+
+            <button
+                id="btn-jump"
+                class="sf-action sf-action-secondary"
+            >
+                Jump
+            </button>
+
+            <div
+                id="answered-preview"
+                class="sf-review-preview"
+            ></div>
+        </div>
+
+        <div class="sf-actions">
+            ${previousReviewButton()}
+
+            <button
+                id="btn-next-phase"
+                class="sf-action"
+            >
+                ${btnText}
+            </button>
+        </div>
     `;
+
+    bindPreviousReview();
+    bindAnsweredJump();
+
+    const goNext = () => {
+        currentIndex++;
+        phase =
+            answeredQuestions[currentIndex]
+                ? "explanation"
+                : "context";
+
+        render();
+    };
 
     document
         .getElementById("btn-next-phase")
-        .addEventListener("click", () => {
+        .addEventListener("click", goNext);
 
-            currentIndex++;
-            phase = "context";
+    document.onkeydown = (event) => {
+        if (event.key !== "Enter") {
+            return;
+        }
 
-            render();
-        });
+        event.preventDefault();
+        goNext();
+    };
 }
 
 // Final Screen
 function renderScoreScreen() {
+    clearKeyboardHandler();
 
     const total =
         correctCount + wrongCount;
@@ -944,15 +1167,32 @@ function renderScoreScreen() {
                 second nature.
             </div>
 
-            <button
-                id="btn-restart"
-                class="sf-action"
-            >
-                Restart Quiz
-            </button>
+            <div class="sf-actions">
+                <button
+                    id="btn-prev-review"
+                    class="sf-action sf-action-secondary"
+                >
+                    Previous
+                </button>
+
+                <button
+                    id="btn-restart"
+                    class="sf-action"
+                >
+                    Restart Quiz
+                </button>
+            </div>
 
         </div>
     `;
+
+    document
+        .getElementById("btn-prev-review")
+        .addEventListener("click", () => {
+            currentIndex = quizData.length - 1;
+            phase = "explanation";
+            render();
+        });
 
     document
         .getElementById("btn-restart")

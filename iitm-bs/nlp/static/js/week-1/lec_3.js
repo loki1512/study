@@ -655,6 +655,7 @@ const quizData =
 
 
 let idx = 0, phase = 'context', chosen = null, correct = 0, wrong = 0;
+let answered = [];
 
 function acc() {
   const total = correct + wrong;
@@ -671,6 +672,98 @@ function updateHUD() {
     idx >= quizData.length ? 'COMPLETE' : `Q ${idx + 1} / ${quizData.length}`;
 }
 
+function refreshScore() {
+  correct = answered.filter(a => a?.ok).length;
+  wrong = answered.filter(a => a && !a.ok).length;
+}
+
+function recordAnswer(q) {
+  if (answered[idx]) return;
+  answered[idx] = {
+    selected: chosen,
+    ok: chosen === q.answer
+  };
+  refreshScore();
+}
+
+function prevButton() {
+  return idx > 0
+    ? '<button class="sf-action sf-action-secondary" id="btn-prev">PREVIOUS</button>'
+    : '';
+}
+
+function formatRanges(numbers) {
+  const ranges = [];
+  let start = numbers[0];
+  let end = numbers[0];
+
+  for (let i = 1; i <= numbers.length; i++) {
+    if (numbers[i] === end + 1) {
+      end = numbers[i];
+      continue;
+    }
+
+    ranges.push(start === end ? `${start}` : `${start}-${end}`);
+    start = numbers[i];
+    end = numbers[i];
+  }
+
+  return ranges.join(', ');
+}
+
+function answeredRange() {
+  const numbers = answered
+    .map((answer, i) => answer ? i + 1 : null)
+    .filter(Boolean);
+
+  return formatRanges(numbers);
+}
+
+function questionGlimpse(question) {
+  return question.length > 58 ? `${question.slice(0, 58)}...` : question;
+}
+
+function bindPrev() {
+  const btn = document.getElementById('btn-prev');
+  if (!btn) return;
+  btn.onclick = () => { idx--; phase = 'explanation'; render(); };
+}
+
+function bindJump() {
+  const input = document.getElementById('answered-jump');
+  const preview = document.getElementById('answered-preview');
+  if (!input || !preview) return;
+
+  const updatePreview = () => {
+    const target = Number(input.value) - 1;
+    preview.textContent = answered[target]
+      ? `Question ${target + 1}: ${questionGlimpse(quizData[target].question)}`
+      : `Allowed values: ${answeredRange()}`;
+  };
+
+  const jumpToInput = () => {
+    const target = Number(input.value) - 1;
+    if (!answered[target]) {
+      updatePreview();
+      return;
+    }
+
+    idx = target;
+    phase = 'explanation';
+    render();
+  };
+
+  input.oninput = updatePreview;
+  input.onchange = updatePreview;
+  document.getElementById('btn-jump').onclick = jumpToInput;
+
+  updatePreview();
+}
+
+function clearKeyboardHandler() {
+  document.onkeydown = null;
+}
+
 function render() {
   updateHUD();
   const c = document.getElementById('card-container');
@@ -682,6 +775,7 @@ function render() {
 }
 
 function renderCtx(c) {
+  clearKeyboardHandler();
   const q = quizData[idx];
   c.innerHTML = `
     <div class="sf-label">context // node ${idx + 1}</div>
@@ -692,6 +786,7 @@ function renderCtx(c) {
 }
 
 function renderQ(c) {
+  clearKeyboardHandler();
   const q = quizData[idx];
   chosen = null;
   const opts = q.options.map(o =>
@@ -704,42 +799,99 @@ function renderQ(c) {
     <button class="sf-action" id="btn-sub" disabled>SUBMIT RESPONSE &gt;</button>
   `;
   const sub = document.getElementById('btn-sub');
-  c.querySelectorAll('.sf-opt-btn').forEach(btn => {
+  const optionBtns = c.querySelectorAll('.sf-opt-btn');
+  const selectOption = (btn) => {
+    optionBtns.forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    chosen = btn.getAttribute('data-val');
+    sub.disabled = false;
+  };
+
+  optionBtns.forEach(btn => {
     btn.onclick = () => {
-      c.querySelectorAll('.sf-opt-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      chosen = btn.getAttribute('data-val');
-      sub.disabled = false;
+      selectOption(btn);
     };
   });
-  sub.onclick = () => {
-    if (chosen === q.answer) correct++; else wrong++;
+
+  const submitAnswer = () => {
+    recordAnswer(q);
     phase = 'explanation';
     render();
+  };
+
+  sub.onclick = submitAnswer;
+
+  document.onkeydown = (event) => {
+    const optionNumber = Number(event.key);
+
+    if (Number.isInteger(optionNumber) && optionNumber >= 1 && optionNumber <= optionBtns.length) {
+      event.preventDefault();
+      selectOption(optionBtns[optionNumber - 1]);
+      return;
+    }
+
+    if (event.key !== 'Enter') return;
+
+    event.preventDefault();
+
+    if (!chosen) {
+      selectOption(optionBtns[0]);
+      return;
+    }
+
+    submitAnswer();
   };
 }
 
 function renderExp(c) {
+  clearKeyboardHandler();
   const q = quizData[idx];
-  const ok = chosen === q.answer;
+  const response = answered[idx] || { selected: chosen, ok: chosen === q.answer };
+  const ok = response.ok;
   const btnLbl = idx === quizData.length - 1 ? 'FINISH MISSION' : 'NEXT NODE &gt;';
   const opts = q.options.map(o => {
     let cls = 'sf-opt-btn';
     if (o === q.answer)            cls += ' correct-reveal';
-    else if (o === chosen && !ok)  cls += ' wrong-reveal';
+    else if (o === response.selected && !ok)  cls += ' wrong-reveal';
     return `<li><button class="${cls}" disabled>${o}</button></li>`;
   }).join('');
   c.innerHTML = `
     <div class="sf-label">analysis // node ${idx + 1}</div>
     <div class="sf-feedback ${ok ? 'ok' : 'fail'}">${ok ? '[ CORRECT ]' : '[ INCORRECT ]'}</div>
+    <div class="sf-content"><strong>Question:</strong> ${q.question}</div>
     <ul class="sf-options">${opts}</ul>
     <div class="sf-explanation">${q.explanation}</div>
-    <button class="sf-action" id="btn-nxt">${btnLbl}</button>
+    <div class="sf-review-jump">
+      <label for="answered-jump">Jump to</label>
+      <input id="answered-jump" type="number" min="1" max="${quizData.length}" value="${idx + 1}" inputmode="numeric">
+      <span class="sf-review-allowed">Allowed: ${answeredRange()}</span>
+      <button id="btn-jump" class="sf-action sf-action-secondary">Jump</button>
+      <div id="answered-preview" class="sf-review-preview"></div>
+    </div>
+    <div class="sf-actions">
+      ${prevButton()}
+      <button class="sf-action" id="btn-nxt">${btnLbl}</button>
+    </div>
   `;
-  document.getElementById('btn-nxt').onclick = () => { idx++; phase = 'context'; render(); };
+  bindPrev();
+  bindJump();
+  const goNext = () => {
+    idx++;
+    phase = answered[idx] ? 'explanation' : 'context';
+    render();
+  };
+
+  document.getElementById('btn-nxt').onclick = goNext;
+
+  document.onkeydown = (event) => {
+    if (event.key !== 'Enter') return;
+    event.preventDefault();
+    goNext();
+  };
 }
 
 function renderFinal(c) {
+  clearKeyboardHandler();
   const total = correct + wrong;
   const pct = total === 0 ? 0 : Math.round((correct / total) * 100);
   const grade      = pct >= 90 ? 'EXCEPTIONAL' : pct >= 70 ? 'PROFICIENT' : pct >= 50 ? 'DEVELOPING' : 'RETRY';
@@ -754,11 +906,19 @@ function renderFinal(c) {
       </div>
       <div class="sf-grade" style="color:${gradeColor}">${grade}</div>
       <div class="sf-final-note">For best pedagogical outcomes, repeat this quiz 2–3 times until the narrative flow feels entirely familiar.</div>
-      <button class="sf-action" id="btn-restart">RESTART SEQUENCE &gt;</button>
+      <div class="sf-actions">
+        <button class="sf-action sf-action-secondary" id="btn-prev">PREVIOUS</button>
+        <button class="sf-action" id="btn-restart">RESTART SEQUENCE &gt;</button>
+      </div>
     </div>
   `;
+  document.getElementById('btn-prev').onclick = () => {
+    idx = quizData.length - 1;
+    phase = 'explanation';
+    render();
+  };
   document.getElementById('btn-restart').onclick = () => {
-    idx = 0; phase = 'context'; chosen = null; correct = 0; wrong = 0; render();
+    idx = 0; phase = 'context'; chosen = null; correct = 0; wrong = 0; answered = []; render();
   };
 }
 
