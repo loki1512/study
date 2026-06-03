@@ -599,7 +599,658 @@ const quizData = [
     ],
     "answer": "Catalysts (to speed up reactions)",
     "explanation": "These amazing abilities—small size, empty d-orbitals, and variable charges—make transition metals excellent at acting as chemical catalysts, lowering activation energies. They can also trap small atoms (like Carbon) to form hard 'interstitial compounds', or mix together to form super-strong alloys. You've officially mastered the D-block basics!"
+  },
+  {
+    "id": 26,
+    "context": "In an SN2 reaction, the incoming nucleophile interacts with the alkyl halide causing the carbon-halide bond to break and a new bond to form simultaneously in a single step, with no intermediate formed. Because the bulky leaving halogen is blocking the 'front' of the molecule, the incoming nucleophile has to find another way in.",
+    "question": "From which direction does the nucleophile attack the carbon atom in an SN2 mechanism?",
+    "options": [
+      "A) From the front, pushing the halogen out of the way",
+      "B) It attacks from the back, exactly opposite to the leaving group",
+      "C) It attacks from the top",
+      "D) It attacks from the bottom"
+    ],
+    "answer": "B) It attacks from the back, exactly opposite to the leaving group",
+    "explanation": "In the transition state of an SN2 reaction, the incoming nucleophile attaches from the side opposite to the one where the halogen atom is present."
+  },
+  {
+    "id": 27,
+    "context": "In the transition state of an SN2 reaction, the incoming nucleophile attaches from the side opposite to the one where the halogen atom is present. Imagine a strong gust of wind blowing an umbrella inside out.",
+    "question": "What is the specific term for this 'flipping' of the molecule's 3D spatial arrangement during an SN2 reaction?",
+    "options": [
+      "A) Inversion of configuration",
+      "B) Retention of configuration",
+      "C) Racemisation",
+      "D) Neutralization"
+    ],
+    "answer": "A) Inversion of configuration",
+    "explanation": "As the attacking nucleophile attaches from the back and the leaving group leaves from the front, the configuration of the carbon atom inverts in much the same way as an umbrella is turned inside out. This process is called inversion of configuration."
+  },
+  {
+    "id": 28,
+    "context": "As the attacking nucleophile attaches from the back and the leaving group leaves from the front, the configuration of the carbon atom inverts in much the same way as an umbrella is turned inside out. This process is called inversion of configuration. But for this backside attack to happen smoothly, the nucleophile needs a clear, unblocked path.",
+    "question": "Because bulky carbon groups block the nucleophile's approach (a concept called steric hindrance), which type of alkyl halide reacts the FASTEST in an SN2 reaction?",
+    "options": [
+      "A) Tertiary (3°) alkyl halides",
+      "B) Secondary (2°) alkyl halides",
+      "C) Primary (1°) alkyl halides",
+      "D) All react at the exact same speed"
+    ],
+    "answer": "C) Primary (1°) alkyl halides",
+    "explanation": "Methyl and primary halides react most rapidly in SN2 reactions because they only have small hydrogen atoms attached, offering a clear path. Tertiary halides are the slowest because bulky alkyl groups heavily hinder the approaching nucleophile."
+  },
+  {
+    "id": 29,
+    "context": "Methyl and primary halides react most rapidly in SN2 reactions because they only have small hydrogen atoms attached, offering a clear path. Tertiary halides are the slowest because bulky alkyl groups heavily hinder the approaching nucleophile. So, if tertiary halides can't use SN2, how do they react? They use a two-step process called SN1 (Substitution Nucleophilic Unimolecular).",
+    "question": "In the first, very slow step of an SN1 reaction, the carbon-halogen bond breaks on its own before the nucleophile even attacks. What is formed as a result?",
+    "options": [
+      "A) A free radical",
+      "B) A carbocation (a carbon with a positive charge)",
+      "C) A carbanion (a carbon with a negative charge)",
+      "D) A completely stable new alkane"
+    ],
+    "answer": "B) A carbocation (a carbon with a positive charge)",
+    "explanation": "In step I of an SN1 reaction, the polarised C—X bond undergoes slow cleavage to produce a carbocation and a halide ion. The carbocation thus formed is then attacked by a nucleophile in step II."
+  },
+  {
+    "id": 30,
+    "context": "In step I of an SN1 reaction, the polarised C—X bond undergoes slow cleavage to produce a carbocation and a halide ion. The carbocation thus formed is then attacked by a nucleophile in step II. Because step I is the slowest step, it acts as a bottleneck that determines the overall speed of the entire reaction.",
+    "question": "For an SN1 reaction to be fast, the carbocation formed in the first step must be very stable. Which type of alkyl halide forms the most stable carbocation and therefore reacts FASTEST in an SN1 reaction?",
+    "options": [
+      "A) Primary (1°) alkyl halides",
+      "B) Secondary (2°) alkyl halides",
+      "C) Tertiary (3°) alkyl halides",
+      "D) Methyl halides"
+    ],
+    "answer": "C) Tertiary (3°) alkyl halides",
+    "explanation": "Greater the stability of the carbocation, greater will be its ease of formation from the alkyl halide and faster will be the rate of the reaction. Tertiary (3°) alkyl halides form highly stable 3° carbocations, making them the fastest in SN1 reactions."
+  },
+  {
+    "id": 31,
+    "context": "Greater the stability of the carbocation, greater will be its ease of formation from the alkyl halide and faster will be the rate of the reaction. Tertiary (3°) alkyl halides form highly stable 3° carbocations, making them the fastest in SN1 reactions. Interestingly, some special primary halides also undergo SN1 reactions very quickly.",
+    "question": "Why do allylic and benzylic halides show unusually high reactivity towards the SN1 reaction, even though they aren't tertiary?",
+    "options": [
+      "A) They are completely flat.",
+      "B) Their carbocations get stabilized through resonance.",
+      "C) They don't have any halogens.",
+      "D) They skip the first step entirely."
+    ],
+    "answer": "B) Their carbocations get stabilized through resonance.",
+    "explanation": "Allylic and benzylic halides show high reactivity towards the SN1 reaction because the carbocation thus formed gets stabilised through resonance, meaning electrons from the nearby double bond or benzene ring shift over to help share the positive charge."
+  },
+  {
+    "id": 32,
+    "context": "Allylic and benzylic halides show high reactivity towards the SN1 reaction because the carbocation thus formed gets stabilised through resonance, meaning electrons from the nearby double bond or benzene ring shift over to help share the positive charge. To fully understand these substitution reactions, we need to look closer at how some molecules interact with light, specifically 'plane polarised light.'",
+    "question": "What is the name of the special instrument used by scientists to measure the angle by which a chemical compound rotates plane polarised light?",
+    "options": [
+      "A) Thermometer",
+      "B) Polarimeter",
+      "C) Spectrometer",
+      "D) Barometer"
+    ],
+    "answer": "B) Polarimeter",
+    "explanation": "The angle by which the plane polarised light is rotated is measured by an instrument called a polarimeter. Compounds that have the ability to rotate this light are called 'optically active' compounds."
+  },
+  {
+    "id": 33,
+    "context": "The angle by which the plane polarised light is rotated is measured by an instrument called a polarimeter. Compounds that have the ability to rotate this light are called 'optically active' compounds. We can classify these optically active compounds based on the specific direction they turn the light beam.",
+    "question": "If an optically active compound rotates plane polarised light to the right (in a clockwise direction), what do we call it?",
+    "options": [
+      "A) Laevorotatory (l-form)",
+      "B) Dextrorotatory (d-form)",
+      "C) Neutralrotatory",
+      "D) Achiral"
+    ],
+    "answer": "B) Dextrorotatory (d-form)",
+    "explanation": "If the compound rotates the plane of polarised light to the right (clockwise direction), it is called dextrorotatory (from the Greek for right rotating) or the d-form, and is indicated by placing a positive (+) sign before the degree of rotation."
+  },
+  {
+    "id": 34,
+    "context": "If the compound rotates the plane of polarised light to the right (clockwise direction), it is called dextrorotatory or the d-form, and is indicated by placing a positive (+) sign before the degree of rotation. Conversely, if it rotates light to the left, it is laevorotatory (-). But why do some carbon molecules rotate light while others don't?",
+    "question": "According to scientists like Louis Pasteur, optical activity happens when a central tetrahedral carbon atom is bonded to four completely DIFFERENT groups. What is such a carbon called?",
+    "options": [
+      "A) A symmetric carbon",
+      "B) An achiral carbon",
+      "C) An asymmetric carbon or stereocentre",
+      "D) A primary carbon"
+    ],
+    "answer": "C) An asymmetric carbon or stereocentre",
+    "explanation": "If all the substituents attached to a tetrahedral carbon are different, the mirror image of the molecule is not superimposed on the molecule itself. Such a carbon is lacking symmetry and is called an asymmetric carbon or stereocentre."
+  },
+  {
+    "id": 35,
+    "context": "If all the substituents attached to a tetrahedral carbon are different, the mirror image of the molecule is not superimposed on the molecule itself. Such a carbon is lacking symmetry and is called an asymmetric carbon or stereocentre. This means the molecule and its mirror reflection won't perfectly overlap, much like how your left glove won't fit on your right hand.",
+    "question": "What is the scientific term for objects (or molecules) that are non-superimposable on their mirror images?",
+    "options": [
+      "A) Achiral",
+      "B) Chiral",
+      "C) Symmetrical",
+      "D) Planar"
+    ],
+    "answer": "B) Chiral",
+    "explanation": "The objects which are non-superimposable on their mirror image (like a pair of hands) are said to be chiral, and this property is known as chirality. Chiral molecules are the ones that are optically active."
+  },
+  {
+    "id": 36,
+    "context": "The objects which are non-superimposable on their mirror image (like a pair of hands) are said to be chiral, and this property is known as chirality. Chiral molecules are the ones that are optically active. Because of this, a single chemical formula can actually exist as two different mirror-image versions.",
+    "question": "What do we call a pair of stereoisomers that are non-superimposable mirror images of each other?",
+    "options": [
+      "A) Enantiomers",
+      "B) Isotopes",
+      "C) Polymers",
+      "D) Allotropes"
+    ],
+    "answer": "A) Enantiomers",
+    "explanation": "The stereoisomers related to each other as non-superimposable mirror images are called enantiomers. They have identical physical properties but rotate plane polarised light in exactly opposite directions."
+  },
+  {
+    "id": 37,
+    "context": "The stereoisomers related to each other as non-superimposable mirror images are called enantiomers. They have identical physical properties but rotate plane polarised light in exactly opposite directions (one is dextrorotatory +, the other is laevorotatory -).",
+    "question": "What happens to the optical rotation if you mix the d-enantiomer and the l-enantiomer together in exactly equal proportions (a 50:50 mixture)?",
+    "options": [
+      "A) The optical rotation doubles in strength.",
+      "B) The mixture has zero optical rotation.",
+      "C) The mixture explodes.",
+      "D) The light gets trapped inside."
+    ],
+    "answer": "B) The mixture has zero optical rotation.",
+    "explanation": "A mixture containing two enantiomers in equal proportions will have zero optical rotation, as the rotation due to one isomer will be perfectly cancelled out by the opposite rotation due to the other isomer."
+  },
+  {
+    "id": 38,
+    "context": "A mixture containing two enantiomers in equal proportions will have zero optical rotation, as the rotation due to one isomer will be perfectly cancelled out by the opposite rotation due to the other isomer. Because this specific 50:50 mixture is so common in chemistry, it gets a special name.",
+    "question": "What is the specific term used to describe this optically inactive, 50:50 mixture of two enantiomers?",
+    "options": [
+      "A) Pure substance",
+      "B) Racemic mixture or racemic modification",
+      "C) Homogeneous catalyst",
+      "D) Vinylic mixture"
+    ],
+    "answer": "B) Racemic mixture or racemic modification",
+    "explanation": "Such an optically inactive 50:50 mixture is known as a racemic mixture or racemic modification. It is represented by prefixing dl or (±) before the chemical name, showing that it contains both + and - forms."
+  },
+  {
+    "id": 39,
+    "context": "Such an optically inactive 50:50 mixture is known as a racemic mixture or racemic modification. It is represented by prefixing dl or (±) before the chemical name, showing that it contains both + and - forms. Now let's tie this back to our SN1 reaction! In an SN1 reaction, the intermediate carbocation formed in the first step is sp2 hybridized, which means its shape is completely flat (planar).",
+    "question": "Because the carbocation intermediate is flat, the nucleophile can attack it from either the front or the back with equal probability. What is the final stereochemical result of an SN1 reaction on an optically active alkyl halide?",
+    "options": [
+      "A) 100% Inversion of configuration",
+      "B) 100% Retention of configuration",
+      "C) Racemisation (formation of a racemic mixture)",
+      "D) No reaction occurs"
+    ],
+    "answer": "C) Racemisation (formation of a racemic mixture)",
+    "explanation": "The attack of the nucleophile may be accomplished from either side of the plane of the carbocation. This results in a 50:50 mixture of products (one with inverted configuration and one with retained configuration), leading to racemisation."
+  },
+  {
+    "id": 40,
+    "context": "The attack of the nucleophile may be accomplished from either side of the plane of the carbocation. This results in a 50:50 mixture of products (one with inverted configuration and one with retained configuration), leading to racemisation. So, nucleophiles substitute halogens. But sometimes, especially with strong bases, a completely different reaction pathway competes with substitution.",
+    "question": "When a haloalkane is heated with an alcoholic solution of potassium hydroxide, instead of swapping the halogen, it loses a hydrogen atom from an adjacent carbon and a halogen atom from its main carbon. What is this reaction called?",
+    "options": [
+      "A) Addition reaction",
+      "B) Substitution reaction",
+      "C) Elimination reaction (or β-elimination)",
+      "D) Hydration reaction"
+    ],
+    "answer": "C) Elimination reaction (or β-elimination)",
+    "explanation": "Heating a haloalkane with alcoholic KOH causes the elimination of a hydrogen atom from the β-carbon and a halogen atom from the α-carbon. This is called β-elimination, and it produces an alkene as the product."
+  },
+  {
+    "id": 41,
+    "context": "Heating a haloalkane with alcoholic KOH causes the elimination of a hydrogen atom from the β-carbon and a halogen atom from the α-carbon. This is called β-elimination, and it produces an alkene as the product. But if the carbon chain is long, the base might have more than one adjacent β-hydrogen it could steal, leading to multiple possible alkene products.",
+    "question": "If an elimination reaction can form more than one possible alkene, the preferred major product is usually the alkene that has the most alkyl groups attached to the doubly bonded carbons. Which chemist formulated this rule?",
+    "options": [
+      "A) Markovnikov",
+      "B) Alexander Zaitsev (Zaitsev's rule)",
+      "C) Victor Grignard",
+      "D) Louis Pasteur"
+    ],
+    "answer": "B) Alexander Zaitsev (Zaitsev's rule)",
+    "explanation": "Russian chemist Alexander Zaitsev formulated a rule in 1875 stating that in dehydrohalogenation reactions, the preferred product is that alkene which has the greater number of alkyl groups attached to the doubly bonded carbon atoms."
+  },
+  {
+    "id": 42,
+    "context": "Russian chemist Alexander Zaitsev formulated a rule in 1875 stating that in dehydrohalogenation reactions, the preferred product is that alkene which has the greater number of alkyl groups attached to the doubly bonded carbon atoms. In chemistry, substitution and elimination are always racing against each other for the same molecules.",
+    "question": "If we use a very bulky, large base/nucleophile, which reaction path will it prefer: substitution (SN2) or elimination?",
+    "options": [
+      "A) Substitution (SN2)",
+      "B) Elimination",
+      "C) SN1 substitution",
+      "D) Neither, it will freeze"
+    ],
+    "answer": "B) Elimination",
+    "explanation": "A bulkier nucleophile will prefer to act as a base and abstract a proton (causing elimination) rather than approach a sterically hindered tetravalent carbon atom for substitution, simply because it is too big to squeeze in for a backside attack."
+  },
+  {
+    "id": 43,
+    "context": "A bulkier nucleophile will prefer to act as a base and abstract a proton (causing elimination) rather than approach a sterically hindered tetravalent carbon atom for substitution, simply because it is too big to squeeze in for a backside attack. Moving away from bases, haloalkanes can also undergo fascinating reactions with pure metals.",
+    "question": "When an alkyl halide reacts with magnesium metal in dry ether, it forms a highly reactive class of organo-metallic compounds (R-Mg-X). What is the common name for these important reagents?",
+    "options": [
+      "A) Sandmeyer Reagents",
+      "B) Finkelstein Reagents",
+      "C) Grignard Reagents",
+      "D) Zaitsev Reagents"
+    ],
+    "answer": "C) Grignard Reagents",
+    "explanation": "Discovered by Victor Grignard in 1900, alkyl magnesium halides (RMgX) are referred to as Grignard Reagents. They are extremely important starting materials for synthesizing a wide variety of other organic compounds."
+  },
+  {
+    "id": 44,
+    "context": "Discovered by Victor Grignard in 1900, alkyl magnesium halides (RMgX) are referred to as Grignard Reagents. They are extremely important starting materials for synthesizing a wide variety of other organic compounds. However, they are incredibly sensitive.",
+    "question": "Because Grignard reagents are so highly reactive and will instantly steal a proton to become a hydrocarbon, what common substance MUST be strictly avoided during their preparation?",
+    "options": [
+      "A) Dry ether",
+      "B) Water (moisture)",
+      "C) Nitrogen gas",
+      "D) Magnesium metal"
+    ],
+    "answer": "B) Water (moisture)",
+    "explanation": "Grignard reagents are highly reactive and react with any source of proton (like water, alcohols, or amines) to give hydrocarbons. Therefore, it is strictly necessary to avoid even traces of moisture, which is why they are prepared in completely dry ether."
+  },
+  {
+    "id": 45,
+    "context": "Grignard reagents are highly reactive and react with any source of proton (like water, alcohols, or amines) to give hydrocarbons. Therefore, it is strictly necessary to avoid even traces of moisture, which is why they are prepared in completely dry ether. Magnesium isn't the only metal that acts this way in dry ether. Sodium metal also has a famous named reaction.",
+    "question": "What is the name of the reaction where alkyl halides react with sodium metal in dry ether to join two alkyl groups together, creating a larger hydrocarbon with exactly double the number of carbon atoms?",
+    "options": [
+      "A) Fittig reaction",
+      "B) Wurtz reaction",
+      "C) Friedel-Crafts reaction",
+      "D) Swarts reaction"
+    ],
+    "answer": "B) Wurtz reaction",
+    "explanation": "Alkyl halides react with sodium in dry ether to give hydrocarbons containing double the number of carbon atoms present in the original halide. This chain-doubling reaction is known as the Wurtz reaction."
+  },
+  {
+    "id": 46,
+    "context": "Alkyl halides react with sodium in dry ether to give hydrocarbons containing double the number of carbon atoms present in the original halide. This chain-doubling reaction is known as the Wurtz reaction. Now that we thoroughly understand how straight-chain alkyl halides behave, let's shift our focus to aryl halides (haloarenes), where the halogen is directly attached to a flat benzene ring.",
+    "question": "Compared to standard haloalkanes, how reactive are haloarenes towards nucleophilic substitution reactions?",
+    "options": [
+      "A) They are much more reactive.",
+      "B) They are extremely less reactive (almost unreactive).",
+      "C) They react at the exact same speed.",
+      "D) They spontaneously explode."
+    ],
+    "answer": "B) They are extremely less reactive (almost unreactive).",
+    "explanation": "Aryl halides are extremely less reactive towards nucleophilic substitution reactions compared to haloalkanes. This is due to several powerful stabilizing factors, like resonance effects and carbon hybridization."
+  },
+  {
+    "id": 47,
+    "context": "Aryl halides are extremely less reactive towards nucleophilic substitution reactions compared to haloalkanes. This is due to several powerful stabilizing factors, like resonance effects and carbon hybridization. Let's look at the 'resonance effect' first.",
+    "question": "Due to resonance in a haloarene, what happens to the bond between the carbon atom of the benzene ring and the halogen atom?",
+    "options": [
+      "A) It becomes a very long single bond.",
+      "B) It instantly breaks apart.",
+      "C) It acquires a partial double bond character.",
+      "D) It turns into a triple bond."
+    ],
+    "answer": "C) It acquires a partial double bond character.",
+    "explanation": "In haloarenes, the electron pairs on the halogen atom are in conjugation with the pi-electrons of the ring. As a result of resonance, the C—X bond acquires a partial double bond character, making it shorter, stronger, and much harder for a nucleophile to break."
+  },
+  {
+    "id": 48,
+    "context": "In haloarenes, the electron pairs on the halogen atom are in conjugation with the pi-electrons of the ring. As a result of resonance, the C—X bond acquires a partial double bond character, making it shorter, stronger, and much harder for a nucleophile to break. But resonance isn't the only thing locking the halogen in place. We also have to look at the carbon's hybridization.",
+    "question": "In a haloalkane, the halogen is attached to an sp3 hybridized carbon. But in a haloarene, what is the hybridization of the carbon atom attached to the halogen?",
+    "options": [
+      "A) sp3 hybridized",
+      "B) sp2 hybridized",
+      "C) sp hybridized",
+      "D) It has no hybridization"
+    ],
+    "answer": "B) sp2 hybridized",
+    "explanation": "In haloarenes, the carbon atom attached to the halogen is sp2 hybridized. An sp2 hybridized carbon has more s-character and holds its electron pair more tightly than an sp3 carbon, making the C-X bond even shorter and harder to break."
+  },
+  {
+    "id": 49,
+    "context": "In haloarenes, the carbon atom attached to the halogen is sp2 hybridized. An sp2 hybridized carbon has more s-character and holds its electron pair more tightly than an sp3 carbon, making the C-X bond even shorter and harder to break. Furthermore, we must remember that the benzene ring itself is a dense cloud of moving pi-electrons.",
+    "question": "Why does the electron-rich nature of the benzene ring actively prevent incoming nucleophiles from attacking the haloarene?",
+    "options": [
+      "A) Because nucleophiles are also electron-rich, and like charges repel each other.",
+      "B) Because nucleophiles are positively charged and get stuck.",
+      "C) Because the benzene ring absorbs the nucleophile.",
+      "D) Because nucleophiles are too heavy."
+    ],
+    "answer": "A) Because nucleophiles are also electron-rich, and like charges repel each other.",
+    "explanation": "Nucleophiles are electron-rich species. The benzene ring is also very electron-rich due to its pi-electron cloud. Because like charges repel, the electron-rich nucleophile faces strong repulsion as it tries to approach the electron-rich haloarene."
+  },
+  {
+    "id": 50,
+    "context": "Nucleophiles are electron-rich species. The benzene ring is also very electron-rich due to its pi-electron cloud. Because like charges repel, the electron-rich nucleophile faces strong repulsion as it tries to approach the electron-rich haloarene. It seems almost impossible to force a nucleophile onto a benzene ring! But chemists have a trick.",
+    "question": "If we want to force a stubborn haloarene to undergo nucleophilic substitution (like replacing its chlorine with an -OH group), what type of chemical group can we attach to the ortho or para positions of the benzene ring to make the reaction dramatically easier?",
+    "options": [
+      "A) An electron-donating group (like -CH3)",
+      "B) An electron-withdrawing group (like -NO2)",
+      "C) Another halogen atom",
+      "D) A noble gas"
+    ],
+    "answer": "B) An electron-withdrawing group (like -NO2)",
+    "explanation": "The presence of an electron withdrawing group (like -NO2) at ortho- and para- positions drastically increases the reactivity of haloarenes. It withdraws the repelling electron density away from the ring, making it much easier for the nucleophile to attack."
+  },
+  {
+    "id": 51,
+    "context": "The presence of an electron withdrawing group (like -NO2) at ortho- and para- positions drastically increases the reactivity of haloarenes by withdrawing repelling electron density away from the ring. But interestingly, if you place this same -NO2 group at the 'meta' position, it doesn't help the reaction at all.",
+    "question": "Why does the -NO2 group only speed up the nucleophilic substitution when it is at the ortho or para positions, and not at the meta position?",
+    "options": [
+      "A) The meta position is physically too far away to matter.",
+      "B) The negative charge formed during the reaction only appears on the ortho and para carbons, allowing the NO2 group to stabilize it there.",
+      "C) The meta position is already permanently positively charged.",
+      "D) The -NO2 group falls off if placed at the meta position."
+    ],
+    "answer": "B) The negative charge formed during the reaction only appears on the ortho and para carbons, allowing the NO2 group to stabilize it there.",
+    "explanation": "During the nucleophile's attack, the negative charge appears at the ortho- and para- positions with respect to the halogen. An NO2 group at these positions stabilizes this negative charge. No such negative charge appears at the meta-position, so an NO2 group there has no stabilizing effect."
+  },
+  {
+    "id": 52,
+    "context": "During the nucleophile's attack, the negative charge appears at the ortho- and para- positions with respect to the halogen. An NO2 group at these positions stabilizes this negative charge. No such negative charge appears at the meta-position. Now, let's look at the opposite kind of reaction: 'Electrophilic substitution', where positively charged species (electrophiles) attack the ring.",
+    "question": "In electrophilic substitution reactions of haloarenes, where do the incoming electrophiles prefer to attach on the benzene ring?",
+    "options": [
+      "A) Only at the meta position",
+      "B) At the ortho and para positions",
+      "C) They replace the halogen completely",
+      "D) They don't attach at all"
+    ],
+    "answer": "B) At the ortho and para positions",
+    "explanation": "Haloarenes undergo usual electrophilic reactions. Because of resonance, the electron density increases more at ortho- and para-positions. Therefore, the halogen atom is o, p-directing, guiding incoming electrophiles specifically to those spots."
+  },
+  {
+    "id": 53,
+    "context": "Because of resonance, the electron density increases more at ortho- and para-positions. Therefore, the halogen atom is o, p-directing, guiding incoming electrophiles specifically to those spots. However, halogens have a conflicting trait: they also pull electrons away through their 'inductive effect'.",
+    "question": "Because the halogen atom withdraws electrons from the benzene ring through the inductive (-I) effect, how does this affect the ring's overall reactivity towards electrophiles compared to a plain benzene ring?",
+    "options": [
+      "A) It makes the ring much more reactive than normal benzene.",
+      "B) It makes the ring somewhat deactivated compared to normal benzene.",
+      "C) It has no effect on reactivity whatsoever.",
+      "D) It causes the ring to spontaneously break apart."
+    ],
+    "answer": "B) It makes the ring somewhat deactivated compared to normal benzene.",
+    "explanation": "The halogen atom has some tendency to withdraw electrons from the benzene ring due to its -I effect. As a result, the ring gets somewhat deactivated, meaning these reactions occur more slowly and require more drastic conditions compared to those in plain benzene."
+  },
+  {
+    "id": 54,
+    "context": "The halogen atom has some tendency to withdraw electrons from the benzene ring due to its -I effect. As a result, the ring gets somewhat deactivated, meaning these reactions occur more slowly and require more drastic conditions compared to those in plain benzene. Let's look at a specific reaction called 'Halogenation', where we try to add a second halogen to the ring.",
+    "question": "Which specific catalyst is required to successfully add a second chlorine atom to chlorobenzene using Cl2 gas?",
+    "options": [
+      "A) Water (H2O)",
+      "B) Sodium metal (Na)",
+      "C) Anhydrous Iron(III) chloride (Anhyd. FeCl3)",
+      "D) Potassium Hydroxide (KOH)"
+    ],
+    "answer": "C) Anhydrous Iron(III) chloride (Anhyd. FeCl3)",
+    "explanation": "To perform halogenation on a somewhat deactivated haloarene, you need a Lewis acid catalyst like anhydrous FeCl3. This helps generate a strong enough electrophile to force the reaction to happen."
+  },
+  {
+    "id": 55,
+    "context": "To perform halogenation on a somewhat deactivated haloarene, you need a Lewis acid catalyst like anhydrous FeCl3. This helps generate a strong enough electrophile to force the reaction to happen. When this reaction occurs, you get a mixture of ortho and para products.",
+    "question": "In electrophilic substitution reactions like halogenation, which isomer is typically formed as the 'major' (most abundant) product?",
+    "options": [
+      "A) The meta-isomer",
+      "B) The ortho-isomer",
+      "C) The para-isomer",
+      "D) They are always formed in perfectly equal amounts"
+    ],
+    "answer": "C) The para-isomer",
+    "explanation": "The para-isomer is usually the major product. This is because the para position is on the exact opposite side of the ring from the first halogen, so there is much less crowding (steric hindrance) than at the adjacent ortho position."
+  },
+  {
+    "id": 56,
+    "context": "The para-isomer is usually the major product. This is because the para position is on the exact opposite side of the ring from the first halogen, so there is much less crowding (steric hindrance) than at the adjacent ortho position. Another electrophilic reaction is 'Nitration', where we add a nitro (-NO2) group to the ring.",
+    "question": "What combination of reagents is used to add a nitro (-NO2) group to a haloarene during a nitration reaction?",
+    "options": [
+      "A) Nitric acid (HNO3) and concentrated Sulfuric acid (conc. H2SO4)",
+      "B) Nitrogen gas and water",
+      "C) Ammonia and heat",
+      "D) Sodium nitrite and HCl"
+    ],
+    "answer": "A) Nitric acid (HNO3) and concentrated Sulfuric acid (conc. H2SO4)",
+    "explanation": "Nitration is carried out by treating the haloarene with a mixture of nitric acid (HNO3) and concentrated sulfuric acid (conc. H2SO4), yielding 1-Chloro-2-nitrobenzene (minor) and 1-Chloro-4-nitrobenzene (major)."
+  },
+  {
+    "id": 57,
+    "context": "Nitration is carried out by treating the haloarene with a mixture of nitric acid (HNO3) and concentrated sulfuric acid (conc. H2SO4), yielding 1-Chloro-2-nitrobenzene (minor) and 1-Chloro-4-nitrobenzene (major). Similarly, we can attach a sulfonic acid group (-SO3H) to the ring in a process called Sulphonation.",
+    "question": "What reagent and condition are needed to perform the Sulphonation of chlorobenzene?",
+    "options": [
+      "A) Sulfur powder and bright UV light",
+      "B) Concentrated Sulfuric acid (conc. H2SO4) and heat",
+      "C) Hydrogen sulfide gas",
+      "D) Sodium sulfite and cold water"
+    ],
+    "answer": "B) Concentrated Sulfuric acid (conc. H2SO4) and heat",
+    "explanation": "Sulphonation is achieved by simply heating the haloarene with concentrated sulfuric acid (conc. H2SO4), which introduces the -SO3H group to the ortho and para positions."
+  },
+  {
+    "id": 58,
+    "context": "Sulphonation is achieved by simply heating the haloarene with concentrated sulfuric acid (conc. H2SO4), which introduces the -SO3H group to the ortho and para positions. We can also add carbon-based alkyl groups directly to the ring using a famous reaction discovered by Charles Friedel and James Crafts.",
+    "question": "In a Friedel-Crafts alkylation reaction, what catalyst is used alongside a haloalkane (like CH3Cl) to attach a methyl group to a chlorobenzene ring?",
+    "options": [
+      "A) Anhydrous Aluminium Chloride (Anhyd. AlCl3)",
+      "B) Sodium metal",
+      "C) UV Light",
+      "D) Water"
+    ],
+    "answer": "A) Anhydrous Aluminium Chloride (Anhyd. AlCl3)",
+    "explanation": "In Friedel-Crafts reactions, an alkyl halide (like CH3Cl) reacts with the haloarene in the presence of Anhydrous Aluminium Chloride (Anhyd. AlCl3) as a catalyst to successfully attach an alkyl group to the ring."
+  },
+  {
+    "id": 59,
+    "context": "In Friedel-Crafts reactions, an alkyl halide (like CH3Cl) reacts with the haloarene in the presence of Anhydrous Aluminium Chloride (Anhyd. AlCl3) as a catalyst to successfully attach an alkyl group to the ring. Earlier, we learned that alkyl halides react with sodium metal to join their chains together (the Wurtz reaction). What happens if we mix an alkyl halide AND an aryl halide together with sodium?",
+    "question": "What is the name of the reaction where a mixture of an alkyl halide and an aryl halide is treated with sodium in dry ether to form an alkylarene?",
+    "options": [
+      "A) Finkelstein reaction",
+      "B) Sandmeyer reaction",
+      "C) Wurtz-Fittig reaction",
+      "D) Friedel-Crafts alkylation"
+    ],
+    "answer": "C) Wurtz-Fittig reaction",
+    "explanation": "A mixture of an alkyl halide and aryl halide gives an alkylarene when treated with sodium in dry ether. Because it combines the straight-chain Wurtz reaction with an aromatic ring, it is called the Wurtz-Fittig reaction."
+  },
+  {
+    "id": 60,
+    "context": "A mixture of an alkyl halide and aryl halide gives an alkylarene when treated with sodium in dry ether. Because it combines the straight-chain Wurtz reaction with an aromatic ring, it is called the Wurtz-Fittig reaction. What if we completely remove the straight-chain alkyl halide from the equation?",
+    "question": "What is the name of the reaction where TWO aryl halides are treated with sodium in dry ether, causing the two aromatic rings to join directly together?",
+    "options": [
+      "A) Wurtz reaction",
+      "B) Fittig reaction",
+      "C) Swarts reaction",
+      "D) Elimination reaction"
+    ],
+    "answer": "B) Fittig reaction",
+    "explanation": "Aryl halides also give analogous compounds when treated with sodium in dry ether, in which two aryl groups are joined together (forming diphenyl). This is specifically called the Fittig reaction."
+  },
+  {
+    "id": 61,
+    "context": "Aryl halides also give analogous compounds when treated with sodium in dry ether, in which two aryl groups are joined together (forming diphenyl). This is specifically called the Fittig reaction. This concludes our study of simple monohalogen compounds! Now let's explore compounds that have multiple halogens, which have massive impacts on our daily lives.",
+    "question": "What is the general term for carbon compounds that contain more than one halogen atom in their structure?",
+    "options": [
+      "A) Monohalides",
+      "B) Polyhalogen compounds",
+      "C) Alcohols",
+      "D) Plain Hydrocarbons"
+    ],
+    "answer": "B) Polyhalogen compounds",
+    "explanation": "Carbon compounds containing more than one halogen atom are usually referred to as polyhalogen compounds. Many of these are incredibly useful in industry and agriculture."
+  },
+  {
+    "id": 62,
+    "context": "Carbon compounds containing more than one halogen atom are usually referred to as polyhalogen compounds. Many of these are incredibly useful in industry and agriculture. Let's start with a very common one containing two chlorines: Dichloromethane (CH2Cl2).",
+    "question": "What is the most common industrial use for Dichloromethane (also known as Methylene chloride)?",
+    "options": [
+      "A) As a food additive",
+      "B) As an agricultural fertilizer",
+      "C) As a solvent, particularly as a paint remover",
+      "D) As drinking water"
+    ],
+    "answer": "C) As a solvent, particularly as a paint remover",
+    "explanation": "Dichloromethane is widely used as a solvent. Specifically, it is commonly used as a paint remover, as a propellant in aerosols, and as a process solvent in the manufacture of drugs."
+  },
+  {
+    "id": 63,
+    "context": "Dichloromethane is widely used as a solvent. Specifically, it is commonly used as a paint remover, as a propellant in aerosols, and as a process solvent in the manufacture of drugs. However, because it evaporates so easily, humans can easily inhale it, leading to negative health effects.",
+    "question": "What part of the human body is primarily harmed by exposure to low levels of methylene chloride (dichloromethane) in the air?",
+    "options": [
+      "A) The skeletal system (bones)",
+      "B) The digestive system (stomach)",
+      "C) The central nervous system (causing impaired hearing and vision)",
+      "D) The muscular system"
+    ],
+    "answer": "C) The central nervous system (causing impaired hearing and vision)",
+    "explanation": "Methylene chloride harms the human central nervous system. Exposure to lower levels in the air can lead to slightly impaired hearing and vision, while higher levels cause dizziness, nausea, and tingling in the fingers and toes."
+  },
+  {
+    "id": 64,
+    "context": "Methylene chloride harms the human central nervous system. Exposure to lower levels in the air can lead to slightly impaired hearing and vision, while higher levels cause dizziness, nausea, and tingling in the fingers and toes. Another famous polyhalogen compound has three chlorines: Trichloromethane (CHCl3). You likely know it by its famous historical name.",
+    "question": "What is Trichloromethane commonly known as, and what was its famous historical use in medicine?",
+    "options": [
+      "A) Freon, used as an asthma inhaler",
+      "B) Iodoform, used as a topical antibiotic",
+      "C) Chloroform, used as a general anaesthetic in surgery",
+      "D) DDT, used as a painkiller"
+    ],
+    "answer": "C) Chloroform, used as a general anaesthetic in surgery",
+    "explanation": "Chemically, trichloromethane is commonly known as Chloroform. It was once widely used as a general anaesthetic in surgery, though it has since been replaced by less toxic, safer anaesthetics."
+  },
+  {
+    "id": 65,
+    "context": "Chemically, trichloromethane is commonly known as Chloroform. It was once widely used as a general anaesthetic in surgery, though it has since been replaced by less toxic, safer anaesthetics. One reason it was phased out is because of how dangerous it becomes when simply left sitting out.",
+    "question": "What extremely poisonous gas is formed when chloroform is slowly oxidized by air in the presence of light?",
+    "options": [
+      "A) Carbon dioxide",
+      "B) Phosgene (carbonyl chloride)",
+      "C) Mustard gas",
+      "D) Methane gas"
+    ],
+    "answer": "B) Phosgene (carbonyl chloride)",
+    "explanation": "Chloroform is slowly oxidized by air in the presence of light to form an extremely poisonous gas called carbonyl chloride, which is also known as phosgene."
+  },
+  {
+    "id": 66,
+    "context": "Chloroform is slowly oxidized by air in the presence of light to form an extremely poisonous gas called carbonyl chloride, which is also known as phosgene. To prevent doctors or chemists from accidentally getting poisoned, chloroform must be stored very carefully.",
+    "question": "Because light and air turn chloroform into toxic phosgene, how must chloroform be stored in a laboratory?",
+    "options": [
+      "A) In completely filled, closed dark coloured bottles",
+      "B) In clear, open glass beakers",
+      "C) In pure oxygen tanks",
+      "D) Under intense UV light"
+    ],
+    "answer": "A) In completely filled, closed dark coloured bottles",
+    "explanation": "Because of the severe danger of phosgene formation, chloroform is therefore stored in closed dark coloured bottles completely filled so that air is kept out and light cannot penetrate."
+  },
+  {
+    "id": 67,
+    "context": "Because of the severe danger of phosgene formation, chloroform is therefore stored in closed dark coloured bottles completely filled so that air is kept out and light cannot penetrate. Now let's swap the three chlorines for three iodines to make Triiodomethane (CHI3), also known as Iodoform. It used to be put directly on cuts and scrapes.",
+    "question": "Why was Iodoform historically used as an antiseptic in medicine?",
+    "options": [
+      "A) Because the iodoform molecule itself kills bacteria",
+      "B) Because it heals skin instantly",
+      "C) Due to the continuous liberation of free iodine, which acts as the antiseptic",
+      "D) Because it smells very pleasant"
+    ],
+    "answer": "C) Due to the continuous liberation of free iodine, which acts as the antiseptic",
+    "explanation": "Iodoform was used earlier as an antiseptic. However, the antiseptic properties are due to the liberation of free iodine from the compound, and not due to the iodoform molecule itself."
+  },
+  {
+    "id": 68,
+    "context": "Iodoform was used earlier as an antiseptic. However, the antiseptic properties are due to the liberation of free iodine from the compound, and not due to the iodoform molecule itself. Because it had a very bad smell, it was replaced. Next, let's look at a compound with FOUR chlorines: Tetrachloromethane, or Carbon tetrachloride (CCl4).",
+    "question": "Carbon tetrachloride was once widely used as a cleaning fluid and fire extinguisher. However, what serious global environmental problem occurs when CCl4 is released into the air and reaches the upper atmosphere?",
+    "options": [
+      "A) It creates toxic acid rain",
+      "B) It drastically depletes the ozone layer",
+      "C) It cools down the earth's temperature",
+      "D) It blocks out the sun entirely"
+    ],
+    "answer": "B) It drastically depletes the ozone layer",
+    "explanation": "When carbon tetrachloride is released into the air, it rises to the atmosphere and depletes the ozone layer. This depletion increases human exposure to ultraviolet rays, leading to increased risks of skin cancer and eye diseases."
+  },
+  {
+    "id": 69,
+    "context": "When carbon tetrachloride is released into the air, it rises to the atmosphere and depletes the ozone layer. This depletion increases human exposure to ultraviolet rays, leading to increased risks of skin cancer and eye diseases. This exact same ozone-depleting problem is shared by a famous class of chemicals once used heavily in refrigerators.",
+    "question": "What is the collective common name for the chlorofluorocarbon (CFC) compounds of methane and ethane?",
+    "options": [
+      "A) Halons",
+      "B) Freons",
+      "C) Dioxins",
+      "D) Polymers"
+    ],
+    "answer": "B) Freons",
+    "explanation": "The chlorofluorocarbon compounds of methane and ethane are collectively known as freons. They are extremely stable, unreactive, non-toxic, non-corrosive and easily liquefiable gases."
+  },
+  {
+    "id": 70,
+    "context": "The chlorofluorocarbon compounds of methane and ethane are collectively known as freons. They are extremely stable, unreactive, non-toxic, non-corrosive and easily liquefiable gases. The most common one is Freon 12 (CCl2F2).",
+    "question": "Which reaction is utilized industrially to manufacture Freon 12 starting from tetrachloromethane?",
+    "options": [
+      "A) Wurtz reaction",
+      "B) Finkelstein reaction",
+      "C) Swarts reaction",
+      "D) Sandmeyer reaction"
+    ],
+    "answer": "C) Swarts reaction",
+    "explanation": "Freon 12 is manufactured from tetrachloromethane by the Swarts reaction, which, as we learned earlier, is the specific reaction used for exchanging halogens for fluorine atoms using metallic fluorides."
+  },
+  {
+    "id": 71,
+    "context": "Freon 12 is manufactured from tetrachloromethane by the Swarts reaction, which, as we learned earlier, is the specific reaction used for exchanging halogens for fluorine atoms using metallic fluorides. Because freons are unreactive and easily liquefiable, they were incredibly popular for aerosols and refrigeration.",
+    "question": "Why are Freons considered a massive environmental hazard once they eventually leak into the atmosphere?",
+    "options": [
+      "A) They fall to the ground and poison plant roots",
+      "B) They diffuse into the stratosphere and initiate radical chain reactions that upset the natural ozone balance",
+      "C) They instantly explode in sunlight",
+      "D) They trap birds in the sky"
+    ],
+    "answer": "B) They diffuse into the stratosphere and initiate radical chain reactions that upset the natural ozone balance",
+    "explanation": "Freon eventually makes its way into the atmosphere where it diffuses unchanged into the stratosphere. In the stratosphere, freon is able to initiate radical chain reactions that can completely upset the natural ozone balance."
+  },
+  {
+    "id": 72,
+    "context": "In the stratosphere, freon is able to initiate radical chain reactions that can completely upset the natural ozone balance, which is why their use has been heavily restricted globally. Finally, let's look at a large, complex polyhalogen compound known as p,p’-Dichlorodiphenyltrichloroethane, or DDT.",
+    "question": "What was the primary application of DDT that led to Paul Muller winning the Nobel Prize in Medicine in 1948?",
+    "options": [
+      "A) It was the first cure for cancer",
+      "B) It was a highly effective chlorinated organic insecticide used to kill mosquitoes carrying malaria",
+      "C) It was a powerful new surgical anaesthetic",
+      "D) It was an industrial fertilizer"
+    ],
+    "answer": "B) It was a highly effective chlorinated organic insecticide used to kill mosquitoes carrying malaria",
+    "explanation": "Paul Muller discovered the effectiveness of DDT as an insecticide. Its use increased enormously on a worldwide basis after World War II, primarily because of its effectiveness against the mosquito that spreads malaria and lice that carry typhus."
+  },
+  {
+    "id": 73,
+    "context": "Paul Muller discovered the effectiveness of DDT as an insecticide. Its use increased enormously on a worldwide basis after World War II, primarily because of its effectiveness against the mosquito that spreads malaria and lice that carry typhus. It seemed like a miracle chemical. However, severe problems soon emerged.",
+    "question": "What biological problem was observed in insect populations after extensive use of DDT began?",
+    "options": [
+      "A) They grew to giant sizes",
+      "B) Many species of insects quickly developed resistance to DDT",
+      "C) They began eating the crops much faster",
+      "D) They completely disappeared from earth"
+    ],
+    "answer": "B) Many species of insects quickly developed resistance to DDT",
+    "explanation": "Problems related to extensive use of DDT began to appear in the late 1940s as many species of insects quickly developed a strong resistance to DDT, making it much less effective over time."
+  },
+  {
+    "id": 74,
+    "context": "Problems related to extensive use of DDT began to appear in the late 1940s as many species of insects quickly developed a strong resistance to DDT, making it much less effective over time. But the bigger problem was its effect on the entire food chain, due to its high toxicity towards fish and other animals.",
+    "question": "Why does DDT build up to dangerous levels in the bodies of animals over time, a process known as bioaccumulation?",
+    "options": [
+      "A) It is not metabolised by animals and is highly fat soluble, so it gets stored permanently in fatty tissues",
+      "B) Animals intentionally eat it because it tastes good",
+      "C) It turns directly into bone matter",
+      "D) It is absorbed perfectly into the bloodstream and never leaves"
+    ],
+    "answer": "A) It is not metabolised by animals and is highly fat soluble, so it gets stored permanently in fatty tissues",
+    "explanation": "The chemical stability of DDT and its fat solubility compounded the problem. DDT is not metabolised very rapidly by animals; instead, it is deposited and stored in the fatty tissues. If ingestion continues, DDT builds up within the animal over time."
+  },
+  {
+    "id": 75,
+    "context": "The chemical stability of DDT and its fat solubility compounded the problem. DDT is not metabolised very rapidly by animals; instead, it is deposited and stored in the fatty tissues. If ingestion continues, DDT builds up within the animal over time. Because of this disastrous bioaccumulation in the food chain, strict actions had to be taken.",
+    "question": "Due to its severe environmental impact and accumulation in fatty tissues, what happened to the widespread use of DDT in the United States in 1973?",
+    "options": [
+      "A) Its use was doubled to fight off resistant bugs",
+      "B) It was restricted to only indoor use",
+      "C) The use of DDT was completely banned",
+      "D) It was heavily added to drinking water supplies"
+    ],
+    "answer": "C) The use of DDT was completely banned",
+    "explanation": "Because of its high toxicity to fish, its chemical stability, and its dangerous tendency to build up in the fatty tissues of animals over time, the use of DDT was officially banned in the United States in 1973."
   }
+
 
 
 ];
