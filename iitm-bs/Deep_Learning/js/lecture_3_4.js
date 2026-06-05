@@ -649,7 +649,333 @@ const quizData =
     ],
     "answer": "A) Massive data, immense compute, and advanced optimization",
     "explanation": "The synergy of algorithmic optimizations, massive internet data, and powerful hardware marks the current, explosive frontier of deep learning."
+  },
+  {
+    "id": 51,
+    "context": "Despite the massive success of deep neural networks, researchers have pointed out a 'paradox' regarding their size and expected performance.",
+    "question": "According to standard machine learning principles, very high-capacity models should be highly susceptible to what problem, which deep learning surprisingly overcomes?",
+    "options": [
+      "A) Underfitting",
+      "B) Overfitting",
+      "C) Exploding gradients",
+      "D) Mode collapse"
+    ],
+    "answer": "B) Overfitting",
+    "explanation": "High-capacity models typically memorize training data and fail on untested data (overfitting), yet deep learning models somehow avoid this. However, despite avoiding overfitting, they still suffer from strange optimization and structural quirks."
+  },
+  {
+    "id": 52,
+    "context": "Because deep learning loss functions are not good, convex functions, they present unique difficulties when trying to train the network.",
+    "question": "What specific optimization challenge arises from the highly non-convex nature of deep neural network loss functions?",
+    "options": [
+      "A) They form perfectly flat planes where gradients are zero.",
+      "B) They completely erase the training data.",
+      "C) They have multiple local minima, some of which are very sharp.",
+      "D) They cause the computer's memory to overflow."
+    ],
+    "answer": "C) They have multiple local minima, some of which are very sharp.",
+    "explanation": "Sharp minima contribute to numerical instability during training. Furthermore, even when training succeeds, the resulting models can be dangerously fragile and easily confused in the real world."
+  },
+  {
+    "id": 53,
+    "context": "Deep learning models are notoriously lacking in real-world robustness, often breaking down completely when minor, innocuous changes are introduced.",
+    "question": "In the lecture's example, what did an image classifier incorrectly predict when a few harmless stickers were placed on a stop sign?",
+    "options": [
+      "A) A yield sign",
+      "B) A pedestrian crossing",
+      "C) A green traffic light",
+      "D) A speed limit of 45"
+    ],
+    "answer": "D) A speed limit of 45",
+    "explanation": "The stickers completely tricked the model into seeing a 45 mph speed limit. This vulnerability extends further, as researchers can craft invisible patterns that cause even weirder hallucinations."
+  },
+  {
+    "id": 54,
+    "context": "Scientists have proven the lack of robust explainability by designing regular patterns that look like static to a human but completely fool AI models.",
+    "question": "When shown these adversarial, static-like patterns, what two unrelated things did the deep learning model confidently classify them as?",
+    "options": [
+      "A) A king penguin and a starfish",
+      "B) A coffee mug and an airplane",
+      "C) A stop sign and a bicycle",
+      "D) A human face and a dog"
+    ],
+    "answer": "A) A king penguin and a starfish",
+    "explanation": "The model hallucinated a penguin and starfish from pure patterns. This proves models can arrive at confident answers without actually understanding the image, recalling a famous historical anecdote about a 'smart' animal."
+  },
+  {
+    "id": 55,
+    "context": "To explain why models cheat to get the right answer, researchers point to the story of a horse named 'Clever Hans' that appeared to know arithmetic.",
+    "question": "How did Clever Hans actually 'solve' math problems like 5 plus 2?",
+    "options": [
+      "A) He memorized flashcards given by his owner.",
+      "B) He tapped his foot and stopped when the cheering audience inadvertently gave him visual cues.",
+      "C) He understood basic verbal commands in German.",
+      "D) He randomly stamped until he was given a carrot."
+    ],
+    "answer": "B) He tapped his foot and stopped when the cheering audience inadvertently gave him visual cues.",
+    "explanation": "The horse merely read crowd reactions, not math. Modern AI models often 'cheat' the exact same way, relying on hidden background cues rather than learning the actual task."
+  },
+  {
+    "id": 56,
+    "context": "Because AI models often act like the famous horse, researchers developed the 'Clever Hans toolkit' to force models to prove their understanding.",
+    "question": "What is the primary function of the Clever Hans toolkit in machine learning?",
+    "options": [
+      "A) To test machine learning systems on adversarial examples to ensure they aren't relying on spurious cues.",
+      "B) To compress massive transformer models into smaller sizes.",
+      "C) To train neural networks exclusively on animal behavior data.",
+      "D) To mathematically prevent exploding gradients."
+    ],
+    "answer": "A) To test machine learning systems on adversarial examples to ensure they aren't relying on spurious cues.",
+    "explanation": "Testing against adversarial examples proves if the model genuinely solved the problem or just found a shortcut. This push for transparency soon collided with a massive wave of ethical concerns around 2017."
+  },
+  {
+    "id": 57,
+    "context": "Around 2017, fairness became a mainstream AI issue after facial recognition software was caught making highly biased predictions regarding criminality.",
+    "question": "In the lecture's example, why was a Black person with a minor record falsely labeled 'high risk' for future crime, while a white person with a severe record was labeled 'low risk'?",
+    "options": [
+      "A) The model was explicitly hardcoded by its creators to be racist.",
+      "B) The model completely ignored facial features and only looked at zip codes.",
+      "C) The model absorbed systemic racial biases present in its training data.",
+      "D) The model randomly assigned risk scores to test subjects."
+    ],
+    "answer": "C) The model absorbed systemic racial biases present in its training data.",
+    "explanation": "The model learned the historical and racial biases embedded deeply in its training data. This data-driven racism was also glaringly obvious in commercial facial recognition software."
+  },
+  {
+    "id": 58,
+    "context": "Researchers audited facial recognition systems from big tech companies to see how well they recognized different demographics.",
+    "question": "Which demographic group experienced the lowest, 'atrociously low' accuracy rates in these commercial facial recognition systems?",
+    "options": [
+      "A) Lighter-skinned males",
+      "B) Lighter-skinned females",
+      "C) Darker-skinned males",
+      "D) Darker-skinned females"
+    ],
+    "answer": "D) Darker-skinned females",
+    "explanation": "Darker-skinned females were recognized terribly compared to the near-100% accuracy for lighter-skinned males. The severe real-world consequences of this bias resulted in drastic corporate actions."
+  },
+  {
+    "id": 59,
+    "context": "Civil rights groups protested these biased models, writing letters to leaders like Jeff Bezos demanding they halt the technology's deployment.",
+    "question": "Around 2020, how did major tech companies like IBM, Amazon, and Microsoft respond to the backlash over facial recognition bias?",
+    "options": [
+      "A) They sued the civil rights groups for defamation.",
+      "B) They made the software open-source so anyone could fix it.",
+      "C) They publicly stopped selling facial recognition technology to police and government agencies.",
+      "D) They replaced all human police officers with AI drones."
+    ],
+    "answer": "C) They publicly stopped selling facial recognition technology to police and government agencies.",
+    "explanation": "They ceased selling to law enforcement to prevent unjust arrests. However, biased training data does not just infect facial recognition; it heavily influences modern generative AI as well."
+  },
+  {
+    "id": 60,
+    "context": "Generative models, which create images from text, also exhibit severe societal biases because they are trained on unfiltered internet data.",
+    "question": "When DALL-E 2 was asked to generate images of 'success' and 'sadness', what biased pattern did it exhibit?",
+    "options": [
+      "A) It generated only older people for success and younger people for sadness.",
+      "B) It generated males for success and females for sadness.",
+      "C) It generated images in color for success and black-and-white for sadness.",
+      "D) It generated animals instead of humans for both prompts."
+    ],
+    "answer": "B) It generated males for success and females for sadness.",
+    "explanation": "The model associated success with men and sadness with women due to ingrained internet stereotypes. These unfair stereotypes also actively harm people when AI is applied in the financial sector."
+  },
+  {
+    "id": 61,
+    "context": "AI models are frequently used for automated decision-making in the financial sector, where historical biases can illegally deny services to qualified individuals.",
+    "question": "What specific financial service did the lecture mention AI models unfairly denying to women, migrants, and people of color?",
+    "options": [
+      "A) Opening checking accounts",
+      "B) Approving bank loans",
+      "C) Processing stock trades",
+      "D) Issuing debit cards"
+    ],
+    "answer": "B) Approving bank loans",
+    "explanation": "Biased historical data teaches the model to unfairly deny loans to marginalized groups. To combat this illegal discrimination, academic institutions began demanding strict accountability."
+  },
+  {
+    "id": 62,
+    "context": "To ensure AI models do not perpetuate illegal discrimination in areas like finance and policing, researchers are creating frameworks to test them.",
+    "question": "Which university introduced an 'AI Audit Challenge' aimed at building compliant models that avoid illegal discrimination?",
+    "options": [
+      "A) MIT",
+      "B) Harvard",
+      "C) Stanford",
+      "D) Oxford"
+    ],
+    "answer": "C) Stanford",
+    "explanation": "Stanford's audit challenge aims to enforce legal fairness. But ensuring AI is 'responsible' isn't just about social equality; it also involves massive environmental concerns."
+  },
+  {
+    "id": 63,
+    "context": "A major part of 'responsible AI' is evaluating its environmental impact, which looks incredibly bad when compared to the efficiency of the biological brain.",
+    "question": "Roughly how much power does the human brain consume to operate its 10^15 synapses?",
+    "options": [
+      "A) 15 watts",
+      "B) 1,500 watts",
+      "C) 15,000 watts",
+      "D) 1.5 megawatts"
+    ],
+    "answer": "A) 15 watts",
+    "explanation": "The human brain runs on a mere 15 watts, while an equivalent deep learning model requires 2048 TPUs. This stark inefficiency has led to an explosion in energy consumption as models scale."
+  },
+  {
+    "id": 64,
+    "context": "The computing power required to train deep learning models is growing at an alarming, unsustainable rate.",
+    "question": "Between 2012 and 2018, by what multiple did the compute used for training deep learning models increase?",
+    "options": [
+      "A) 300 times",
+      "B) 3,000 times",
+      "C) 30,000 times",
+      "D) 300,000 times"
+    ],
+    "answer": "D) 300,000 times",
+    "explanation": "A 300,000-fold increase in compute directly translates into astronomical energy use, drastically inflating the carbon footprint of AI research."
+  },
+  {
+    "id": 65,
+    "context": "Training massive AI models has a severe environmental impact that dwarfs many everyday human activities.",
+    "question": "According to the lecture, the carbon emission generated by training just one large Transformer model is roughly equivalent to what?",
+    "options": [
+      "A) A single passenger's flight from New York to San Francisco.",
+      "B) An average human's total CO2 emissions for one year.",
+      "C) Five times the entire lifetime carbon emission of an average car.",
+      "D) The daily power consumption of the city of London."
+    ],
+    "answer": "C) Five times the entire lifetime carbon emission of an average car.",
+    "explanation": "Training one Transformer emits 5x a car's lifetime carbon. This massive pollution raises an intense ethical question regarding 'Climate Justice' and who actually suffers the consequences."
+  },
+  {
+    "id": 66,
+    "context": "The environmental cost of training massive English-language models affects the whole globe, disproportionately punishing developing nations.",
+    "question": "Which two vulnerable regions were specifically mentioned as unfairly paying the environmental price (via floods and sinking) for these English-centric AI models?",
+    "options": [
+      "A) Bangladesh and Fiji",
+      "B) The Maldives and Sudan",
+      "C) Greenland and Iceland",
+      "D) Nepal and Bhutan"
+    ],
+    "answer": "B) The Maldives and Sudan",
+    "explanation": "The Maldives and Sudan suffer immediate climate effects to fund AI tools that don't even support their native languages. While these environmental realities are somber, deep learning is simultaneously achieving miraculous breakthroughs in science."
+  },
+  {
+    "id": 67,
+    "context": "Moving from the somber ethical issues to AI's positive impacts, deep learning has recently become the primary driver of massive biological research.",
+    "question": "In 2020, what massive biological problem did DeepMind's AlphaFold model make remarkable progress on?",
+    "options": [
+      "A) Curing all forms of genetic baldness.",
+      "B) Predicting the 3D folding structure of proteins.",
+      "C) Translating animal communication into English.",
+      "D) Simulating the entire human brain."
+    ],
+    "answer": "B) Predicting the 3D folding structure of proteins.",
+    "explanation": "AlphaFold accurately predicts 3D protein structures based on linear amino acid sequences. Understanding these 3D shapes is incredibly vital for modern medicine and pandemic response."
+  },
+  {
+    "id": 68,
+    "context": "Knowing the exact 3D shape of a protein allows scientists to figure out what molecules can effectively attach to it.",
+    "question": "How did knowing the 3D 'crown-like' structure of the COVID-19 spike protein help humanity?",
+    "options": [
+      "A) It allowed scientists to surgically remove the spikes.",
+      "B) It proved the virus was created by AI.",
+      "C) It enabled highly effective and targeted drug delivery design.",
+      "D) It allowed the virus to be visually classified by standard CNNs."
+    ],
+    "answer": "C) It enabled highly effective and targeted drug delivery design.",
+    "explanation": "Targeted drug design relies strictly on 3D structure compatibility. Beyond the microscopic world of viruses, deep learning is also being used to study the largest objects in the universe."
+  },
+  {
+    "id": 69,
+    "context": "Deep learning is revolutionizing astronomy by repurposing generative techniques originally developed to manipulate images of human faces.",
+    "question": "How are generative models being applied to massive astronomical objects like galaxies?",
+    "options": [
+      "A) To predict how galaxies will visually age and change over time.",
+      "B) To instantly teleport satellites between galaxies.",
+      "C) To translate alien radio waves into readable text.",
+      "D) To count the exact number of stars in the universe."
+    ],
+    "answer": "A) To predict how galaxies will visually age and change over time.",
+    "explanation": "Just as AI can age a human face by 10 years, it can visually age galaxies to help astronomers understand long-term cosmic phenomena. The final frontier, however, is taking these powerful models out of the lab and putting them in users' hands."
+  },
+  {
+    "id": 70,
+    "context": "Massive models require huge cloud servers, but much of the global population, especially in rural India, accesses the digital world completely differently.",
+    "question": "What specific device form-factor is driving the need for 'efficient deep learning' to serve populations without traditional computers?",
+    "options": [
+      "A) Desktop mainframes",
+      "B) Smartwatches",
+      "C) Mobile smartphones",
+      "D) Virtual reality headsets"
+    ],
+    "answer": "C) Mobile smartphones",
+    "explanation": "Smartphones require models to run efficiently directly on 'the edge.' This push for edge computing is also strictly required for autonomous devices that operate away from civilization."
+  },
+  {
+    "id": 71,
+    "context": "Edge devices must often operate in constrained environments where relying on a cloud server for intelligence is physically impossible.",
+    "question": "Why is it absolutely crucial for AI models to run locally on devices like drones?",
+    "options": [
+      "A) Drones generate too much heat for the cloud to process.",
+      "B) Because they often have limited memory, limited power, and lack internet connectivity.",
+      "C) So the drones can mine cryptocurrency while flying.",
+      "D) Because cloud servers are legally banned from analyzing drone footage."
+    ],
+    "answer": "B) Because they often have limited memory, limited power, and lack internet connectivity.",
+    "explanation": "Drones need local, offline AI to function in remote locations. Running AI locally also guarantees a critical performance metric required for safe physical interaction."
+  },
+  {
+    "id": 72,
+    "context": "Sending data to the cloud and waiting for a response creates a noticeable delay, which is unacceptable for autonomous driving or drone flight.",
+    "question": "What time scale is strictly required for real-time edge AI outputs, avoiding the 1-2 second delay of cloud processing?",
+    "options": [
+      "A) Minutes",
+      "B) Milliseconds",
+      "C) Nanoseconds",
+      "D) Picoseconds"
+    ],
+    "answer": "B) Milliseconds",
+    "explanation": "Millisecond latency is required for real-time safety and usability. To achieve this blazing speed on small devices, researchers must fundamentally alter the massive models they have built."
+  },
+  {
+    "id": 73,
+    "context": "To make billion-parameter models fit onto small edge devices like phones or drones, researchers must actively manipulate the architecture.",
+    "question": "What is the primary research goal regarding these massive models and edge computing?",
+    "options": [
+      "A) Forcing users to buy bigger phones.",
+      "B) Making the models smaller without compromising their accuracy.",
+      "C) Splitting the model so half runs on the phone and half on a smartwatch.",
+      "D) Reverting back to simple rule-based symbolic AI."
+    ],
+    "answer": "B) Making the models smaller without compromising their accuracy.",
+    "explanation": "Shrinking models (compression/quantization) without losing accuracy is key to ubiquitous AI. While concluding the lecture, the speaker admits that a brief history inevitably leaves a few stones unturned."
+  },
+  {
+    "id": 74,
+    "context": "In his concluding remarks, the lecturer acknowledges that a brief historical overview cannot cover every single subfield of deep learning.",
+    "question": "Which specific subfield did the lecturer explicitly mention skipping, which involves technologies like text-to-speech and voice conversion?",
+    "options": [
+      "A) Computer Vision",
+      "B) Automatic Speech Recognition and Processing",
+      "C) Natural Language Processing",
+      "D) Reinforcement Learning"
+    ],
+    "answer": "B) Automatic Speech Recognition and Processing",
+    "explanation": "Speech processing was skipped to maintain a high-level view of the broader architectural shifts. Ultimately, the lecture successfully charted the massive evolutionary path of the field."
+  },
+  {
+    "id": 75,
+    "context": "The lecture covered a vast timeline, showing how the field transitioned across multiple dominant paradigms to reach today's state-of-the-art.",
+    "question": "According to the concluding summary, what series of architectures best represents the evolutionary path of deep learning covered in the lecture?",
+    "options": [
+      "A) Rule-based logic -> Expert Systems -> Symbolic AI",
+      "B) Phrenology -> Localism -> Distributed Processing",
+      "C) Early neural networks -> Recurrent networks -> Transformer-based models and Generative models",
+      "D) Support Vector Machines -> Random Forests -> K-Means Clustering"
+    ],
+    "answer": "C) Early neural networks -> Recurrent networks -> Transformer-based models and Generative models",
+    "explanation": "This sequence summarizes the historical evolution of modern deep learning, bringing the story full circle from early biological inspiration to modern generative wonders."
   }
+
 ]
 
 
