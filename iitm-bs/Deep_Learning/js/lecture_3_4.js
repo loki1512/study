@@ -335,7 +335,7 @@ const quizData =
       "C) Resnet",
       "D) Lenet"
     ],
-    "answer": "C) 3.6%",
+    "answer": "C) Resnet",
     "explanation": "ResNet achieved 3.6%. While classifying whole images was solved by ResNet, finding the exact coordinates of objects within the image required a different CNN offshoot."
   },
   {
