@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relational Algebra · Quiz Terminal</title>
+<title>DBMS - Week 2 - Lecture 7 Quiz</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/dbms.css">
 <script>
   window.MathJax = {
     tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
@@ -13,12 +14,11 @@
   };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
-<link rel="stylesheet" href="../../css/dbms.css">
 </head>
 <body>
 <div id="sf-quiz">
   <div class="sf-header">
-    <div class="sf-title">▸ Week 2 - Lecture 7: Introduction to RELATIONAL ALGEBRA 2</div>
+    <div class="sf-title">▸ RELATIONAL ALGEBRA · TERMINAL QUIZ</div>
     <div class="sf-score-display">
       <div class="sf-score-pill">
         <span class="correct val" id="sc-correct">0</span>
@@ -38,8 +38,27 @@
     <span><kbd class="sf-kb-key">1–4</kbd> Select option</span>
     <span><kbd class="sf-kb-key">Enter</kbd> Submit / Next</span>
     <span><kbd class="sf-kb-key">Tab</kbd> Navigate</span>
+    <span><kbd class="sf-kb-key">T</kbd> View Table</span>
   </div>
 </div>
+
+<!-- Floating View Table button -->
+<button id="btn-view-table" title="View reference table for this question (T)">⊞ VIEW TABLE</button>
+
+<!-- Table Modal -->
+<div class="sf-modal-backdrop" id="sf-modal-backdrop" role="dialog" aria-modal="true" aria-label="Reference Table">
+  <div class="sf-modal">
+    <div class="sf-modal-header">
+      <span>▸ REFERENCE TABLE</span>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="sf-modal-qnum" id="modal-qnum"></span>
+        <button class="sf-modal-close" id="btn-modal-close" tabindex="0">✕ CLOSE</button>
+      </div>
+    </div>
+    <div class="sf-modal-body" id="modal-body"></div>
+  </div>
+</div>
+
 <script src="../js/lec_7.js"></script>
 </body>
 </html>
