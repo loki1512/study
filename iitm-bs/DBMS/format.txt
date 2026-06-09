@@ -1,0 +1,66 @@
+{
+  "quizMeta": {
+    "title": "Relational Algebra Fundamentals",
+    "subtitle": "Lecture Revision Quiz",
+    "totalQuestions": 60,
+    "estimatedTime": "45 mins",
+    "topics": [
+      "Relations",
+      "Select",
+      "Project",
+      "Union",
+      "Difference",
+      "Cartesian Product",
+      "Natural Join",
+      "Aggregation"
+    ]
+  },
+
+  "intro": {
+    "heading": "Relational Algebra Revision",
+    "description": "This quiz covers the mathematical foundations of relations, unary and binary relational operators, natural joins, aggregation, and limitations of relational algebra. Questions are arranged concept-by-concept with contextual introductions and practical applications."
+  },
+
+  "questions": [
+    {
+      "id": 1,
+
+      "context": "Introduce the concept before asking the question. This should teach or remind the learner of the underlying idea.",
+
+      "question": "Actual question statement?",
+
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+
+      "answer": "B",
+
+      "explanation": "Detailed explanation shown after submission.",
+
+      "application": "Real-world application or practical example.",
+
+      "tables": [
+        {
+          "caption": "Example Relation",
+          "headers": ["A", "B"],
+          "rows": [
+            ["a1", "b1"],
+            ["a2", "b2"]
+          ]
+        }
+      ],
+
+      "formula": "\\sigma_{Salary > 600}(Employee)",
+
+      "difficulty": "easy",
+
+      "tags": [
+        "selection",
+        "relational-algebra"
+      ]
+    }
+  ]
+}
