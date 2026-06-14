@@ -658,6 +658,12 @@ const quizData =
 let idx = 0, phase = 'context', chosen = null, correct = 0, wrong = 0;
 let answered = [];
 
+function typesetMath() {
+  if (window.MathJax && MathJax.typesetPromise) {
+    MathJax.typesetPromise([document.getElementById('card-container')]).catch(console.error);
+  }
+}
+
 function acc() {
   const total = correct + wrong;
   return total === 0 ? '--' : Math.round((correct / total) * 100) + '%';
@@ -770,7 +776,7 @@ function render() {
   const c = document.getElementById('card-container');
   c.innerHTML = '';
   if (idx >= quizData.length) { renderFinal(c); return; }
-  if (phase === 'context')      renderCtx(c);
+  if (phase === 'context')       renderCtx(c);
   else if (phase === 'question') renderQ(c);
   else                           renderExp(c);
 }
@@ -784,6 +790,7 @@ function renderCtx(c) {
     <button class="sf-action" id="btn-fwd">PROCEED TO QUERY &gt;</button>
   `;
   document.getElementById('btn-fwd').onclick = () => { phase = 'question'; render(); };
+  typesetMath();
 }
 
 function renderQ(c) {
@@ -842,6 +849,8 @@ function renderQ(c) {
 
     submitAnswer();
   };
+
+  typesetMath();
 }
 
 function renderExp(c) {
@@ -852,8 +861,8 @@ function renderExp(c) {
   const btnLbl = idx === quizData.length - 1 ? 'FINISH MISSION' : 'NEXT NODE &gt;';
   const opts = q.options.map(o => {
     let cls = 'sf-opt-btn';
-    if (o === q.answer)            cls += ' correct-reveal';
-    else if (o === response.selected && !ok)  cls += ' wrong-reveal';
+    if (o === q.answer)                      cls += ' correct-reveal';
+    else if (o === response.selected && !ok) cls += ' wrong-reveal';
     return `<li><button class="${cls}" disabled>${o}</button></li>`;
   }).join('');
   c.innerHTML = `
@@ -876,6 +885,7 @@ function renderExp(c) {
   `;
   bindPrev();
   bindJump();
+
   const goNext = () => {
     idx++;
     phase = answered[idx] ? 'explanation' : 'context';
@@ -889,6 +899,8 @@ function renderExp(c) {
     event.preventDefault();
     goNext();
   };
+
+  typesetMath();
 }
 
 function renderFinal(c) {
@@ -921,6 +933,7 @@ function renderFinal(c) {
   document.getElementById('btn-restart').onclick = () => {
     idx = 0; phase = 'context'; chosen = null; correct = 0; wrong = 0; answered = []; render();
   };
+  typesetMath();
 }
 
 render();
